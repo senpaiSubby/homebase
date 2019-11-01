@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Mountain.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0f0f0f",
+        "foreground": "#e1dbd1",
+        "cursor": "#e1dbd1"
+    },
+    "colors": {
+        "color0": "#0f0f0f",
+        "color1": "#8D887B",
+        "color2": "#68728D",
+        "color3": "#7A86A1",
+        "color4": "#B2A796",
+        "color5": "#9F9FA1",
+        "color6": "#C6B9A5",
+        "color7": "#e1dbd1",
+        "color8": "#9d9992",
+        "color9": "#8D887B",
+        "color10": "#68728D",
+        "color11": "#7A86A1",
+        "color12": "#B2A796",
+        "color13": "#9F9FA1",
+        "color14": "#C6B9A5",
+        "color15": "#e1dbd1"
+    }
+}

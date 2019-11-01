@@ -1,0 +1,29 @@
+auto-reload yes
+browser qutebrowser %u
+html-renderer "w3m -dump -T text/html"
+cleanup-on-quit yes
+download-path "~/downloads/podcasts"
+feed-sort-order firsttag
+max-downloads 4
+notify-always yes
+notify-format "%d new articles (%n unread articles, %f unread feeds)"
+notify-program notify-send
+player mpv
+refresh-on-startup yes
+reload-time 20
+reload-threads 4
+show-read-articles yes
+show-read-feeds yes
+
+bind-key "SPACE" open
+
+articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
+feedlist-format     "%4i %S %n %11u %t"
+
+color background red default
+color info black green
+color article white default
+color listnormal white default
+color listfocus black green
+color listnormal_unread yellow default
+color listfocus_unread black green

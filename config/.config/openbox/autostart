@@ -1,0 +1,48 @@
+#!/bin/bash
+PATH=$PATH:$HOME/Git/scripts
+export PATH
+# Set Screen Refresh Rate
+#xrandr -r 144
+#sh ~/.fehbg
+# Start Top Bar
+xfce4-panel &
+
+#polybar -r top2 &
+#polybar -r bottom2 &
+wmname LG3D
+pcmanfm --desktop &
+# Load Xresources Config
+xrdb -merge ~/.Xresources
+# Load Custom Keymapping
+#xmodmap ~/.Xmodmap
+# Disable Screen Timeout
+xset -dpms
+xset s off
+# Enable USB Automount
+udiskie -a -t &
+# Set Volume To %10
+amixer set Master 10%
+# Start Policy Daemon
+lxqt-policykit-agent &
+# Start Compton Screen Composition
+compton --config ~/.config/openbox/compton &
+#pkisxhkd -c ~/.config/openbox/sxhkd
+# Set Mouse Timeout To 1 Second
+#unclutter --timeout 1 &
+# Set Xorg Cursor Theme
+xsetroot -cursor_name left_ptr &
+# Start Notofication Daemon
+sh ~/Git/scripts/dunst.sh &
+#sh ~/.config/bspwm/wal &
+# Disable ethernet port to save battery
+#sudo ip link set enp0s25 down
+# Torrent Client
+#deluge &
+#redshift &
+#sleep 30
+# Syncthing Service
+dropbox &
+#QSyncthingTray &
+libinput-gestures-setup start
+
+#bspc monitor eDP1 -d One Two Three Four Five

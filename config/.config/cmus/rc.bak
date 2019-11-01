@@ -1,0 +1,28 @@
+set output_plugin=alsa
+set dsp.alsa.device=default
+set mixer.alsa.device=default
+set mixer.alsa.channel=Master
+
+cd ~/Music
+
+set play_library=true
+set auto_expand_albums_follow=false
+set follow=true
+set format_current= %t: %A: %l=
+set format_playlist= %-18A %-18l %t%= %d 
+set format_playlist_va= %-18A %-18l %t%= %d 
+set format_trackwin= %t%=
+set format_title=cmus
+set altformat_title=cmus
+set lib_sort=title
+set play_sorted=false
+set shuffle=false
+set repeat=true
+set softvol=false
+
+bind common u shell ~/.config/cmus/update.sh
+bind common , player-prev
+bind common . player-next
+bind common / player-pause
+
+colorscheme sublime

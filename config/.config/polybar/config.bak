@@ -1,0 +1,763 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;   _____       _     _ _                  _____      _       ____                _____             __ _        ;
+;  / ____|     | |   | (_)                |  __ \    | |     |  _ \              / ____|           / _(_)       ;
+; | (___  _   _| |__ | |_ _ __ ___   ___  | |__) |__ | |_   _| |_) | __ _ _ __  | |     ___  _ __ | |_ _  __ _  ;
+;  \___ \| | | | '_ \| | | '_ ` _ \ / _ \ |  ___/ _ \| | | | |  _ < / _` | '__| | |    / _ \| '_ \|  _| |/ _` | ;
+;  ____) | |_| | |_) | | | | | | | |  __/ | |  | (_) | | |_| | |_) | (_| | |    | |___| (_) | | | | | | | (_| | ;
+; |_____/ \__,_|_.__/|_|_|_| |_| |_|\___| |_|   \___/|_|\__, |____/ \__,_|_|     \_____\___/|_| |_|_| |_|\__, | ;
+;                                                        __/ |                                            __/ | ;
+;                                                       |___/                                            |___/  ;
+;                                                                                                               ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[colors]
+;background = #CC070e14
+;background-alt = #CC070e14
+background = #070e14
+background-alt = #070e14
+foreground = #dddddd
+foreground-alt = #dddddd
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/top]
+;monitor = DisplayPort-0
+width = 100%
+height = 28
+radius = 0
+fixed-center = true 
+override-redirect = false
+wmrestack = bspwm
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #a2ba00
+;border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+tray-detached = false
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=14;3
+font-1 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=20;4
+font-2 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=14;5
+
+modules-left = network separator
+modules-center = bspwm 
+modules-right = separator backlight separator pkg separator pavolume separator date separator power
+
+;tray-position = right
+;tray-padding = 2
+
+[bar/bottom]
+;monitor = DisplayPort-0
+width = 100%
+height = 28
+radius = 0
+fixed-center = true 
+override-redirect = false
+wmrestack = bspwm
+offset-x = 0
+offset-y = 0
+
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #ffffff
+
+border-size = 0
+border-color = #a2ba00
+;border-color = #00000000
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=14;3
+font-1 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=50;4
+font-2 = SauceCodePro\ Nerd\ Font\ Mono:pixelsize=50;0
+
+modules-left = info-trash separator memory separator cpu
+modules-center = title
+modules-right = battery1 separator battery2
+
+tray-position = right
+tray-padding = 5
+; Tray icon max size
+tray-maxsize = 16
+
+;tray-transparent = false
+
+tray-background = ${colors.background}
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = " %percentage%% "
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 1.0
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices have an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+; Available tags:
+;   <label-connected> (default)
+;   <ramp-signal>
+format-connected = <label-connected>
+
+; Available tags:
+;   <label-disconnected> (default)
+format-disconnected = <label-disconnected>
+
+; Available tags:
+;   <label-connected> (default)
+;   <label-packetloss>
+;   <animation-packetloss>
+format-packetloss = <animation-packetloss> <label-connected>
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected = "%essid% %signal% %local_ip% "
+label-connected-foreground = #dfdfdf
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+; Default: (none)
+label-disconnected = N/A
+label-disconnected-foreground = #66ffffff
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %linkspeed% [wired]
+; Default: (none)
+;label-packetloss = %essid%
+;label-packetloss-foreground = #eefafafa
+
+; Only applies if <ramp-signal> is used
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+
+; Only applies if <animation-packetloss> is used
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+
+[module/battery1]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use 
+%%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-discharging = <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = " +%percentage% " 
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = " -%percentage% %consumption%w %time% "
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use 
+%%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-discharging = <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = " +%percentage% "
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = " -%percentage% %consumption%w %time% "
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+[module/title]
+type = internal/xwindow
+; Available tags:
+;   <label> (default)
+;format-background = #f00
+;format-foreground = #000
+format-padding = 1
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 30
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:120:...%
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+mount-2 = /home
+mount-3 = /mnt/media
+
+spacing = 2
+format-mounted = <label-mounted>
+label-mounted = %{colors.foreground-alt}%mountpoint% %free%
+label-unmounted = %mountpoint% -
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+wrapping-scroll = false
+label-focused-font = 2
+label-occupied-font = 2
+label-urgent-font = 2
+label-empty-font = 2
+
+reverse-scroll = false
+
+label-focused = %icon%
+label-focused-background = #a2ba00
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %icon%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+ws-icon-default = 
+ws-icon-0 = web;
+ws-icon-1 = term;
+ws-icon-2 = term2;
+ws-icon-3 = chat;
+ws-icon-4 = code; 
+ws-icon-5 = media;
+ws-icon-6 = steam;
+ws-icon-7 = 8
+ws-icon-8 = 9
+ws-icon-9 = 10
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-active-font = 2
+
+reverse-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = false
+
+label-mode-padding = 0
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = #ffffff
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused =  %icon%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent =  %icon%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+ws-icon-default = 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+ws-icon-9 = 10
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <icon-prev> <toggle> <icon-next> <label-song>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song-maxlen = 60
+label-song-ellipsis = true
+host = localhost
+port = 6600
+interval = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = 
+label = "%percentage% "
+
+[module/memory]
+type = internal/memory
+interval = 00.1
+format-prefix = "  " 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = 
+label = "%percentage_used% "
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+format-connected-underline = 
+format-connected-prefix = "  "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1
+
+; See "man date" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %a %b %d - 
+
+; Optional time format
+time = " %I:%m %p "
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %b %d %Y -
+time-alt = %I:%M:%S %p
+
+label = %time%
+format = <label>
+;format-background = #ddffffff
+;format-background = #88000000
+;format-foreground = #333
+format-padding = 0
+
+
+[module/volume]
+type = internal/volume
+format-volume = <label-volume> <bar-volume>"  "
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-suffix = "  "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/power]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = " "
+label-open-foreground = #dc322f
+label-close =  Cancel
+label-close-foreground = ${colors.foreground-alt}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = Reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = Shutdown
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+[module/bitcoin]
+type = custom/script
+interval = 10
+format = "<label> "
+format-prefix = " "
+tail = true
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/scripts/bitcoin
+
+[module/separator]
+type = custom/text
+content-font = 2
+content = |
+content-foreground = #dfdfdf
+
+[module/pkg]
+type = custom/script
+interval = 300
+format = <label>
+format-underline = #dc322f
+label = " %output:0:30% "
+exec = ~/.config/polybar/scripts/pkg.sh
+
+[module/reddit]
+type = custom/script
+interval = 10
+format = <label>
+exec = ~/.config/polybar/scripts/reddit.sh
+click-left = xdg-open https://reddit.com/message/unread & disown
+
+[module/redshift]
+type = custom/script
+interval = 5
+
+exec = ~/.config/polybar/scripts/redshift.sh
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = " %output% "
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+
+[module/system-uptime-pretty]
+type = custom/script
+label = " %output%"
+exec = ~/.config/polybar/scripts/system-uptime-pretty.sh
+interval = 30
+
+[module/info-redshift-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-redshift-temp.sh
+interval = 5
+
+[module/info-trash]
+type = custom/script
+label = "  %output% "
+exec = ~/.config/polybar/scripts/info-trash.sh
+interval = 1
+click-left = ~/.config/polybar/polybar-scripts/info-trash.sh --clean
+
+[module/cmus]
+type = custom/script
+
+exec = sh ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --pause
+
+format = <label>
+format-underline = ${colors.primary}
+label = "%output% "
+
+[module/menu]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+
+label-open = Apps
+label-close = X
+
+; Optional item separator
+; Default: none
+label-separator = " | "
+
+menu-0-0 = Browsers
+menu-0-0-exec = menu-open-1
+menu-0-1 = Multimedia
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Chromium
+menu-1-1-exec = chromium &
+
+menu-2-0 = Gimp
+menu-2-0-exec = gimp &
+menu-2-1 = Scrot
+menu-2-1-exec = scrot &
+

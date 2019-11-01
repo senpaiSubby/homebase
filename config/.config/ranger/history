@@ -1,0 +1,50 @@
+shell mkdir standalone
+rename testing
+rename _standalone
+rename _testing
+rename reddit_scraper
+rename reddit_scraper.py
+rename ed.py
+shell mkdir alexa_app
+shell tar -xvf devilutionx-multilib-git-0.4.0.r166.g0b695f61-1-x86_64.pkg.tar.xz 
+shell desktop-file-install 
+shell mkdir notes
+shell npm run package
+shell unzip 05-iosevka-slab-2.2.1.zip 
+open_with `
+shell unzip Input-Font\ \(1\).zip 
+shell unzip Input-Font\ \(2\).zip 
+shell unzip Input-Font\ \(3\).zip 
+shell unzip Input-Font.zip 
+rename .clarkson
+rename .kanzi
+shell mkdir kanzi
+shell mkdir ubooquity
+rename .ubooquity
+rename .airsonic
+shell mkdir airsonic
+shell mkdir temp
+search iso
+search disk
+search cd
+shell bul
+rename rclone.conf
+shell sudo rm -rf test 
+shell sudo nano ssh
+shell sudo touch ssh
+rename cmds
+shell tail -f log.txt 
+shell mkdir rclone
+shell nano rclone.conf
+shell taild -f rclone.log 
+shell tail -f rclone.log 
+shell 
+rename Tonari no Kaibutsu-kun
+bulkrename 
+shell rm -rf sorted 
+open_with 
+shell sudo rm -rf 
+shell sh alexa_remote_control.sh 
+shell unzip nodejs_dark_by_wfuller_db4e1ip.zip 
+shell mkdir arduinoTesting
+delete

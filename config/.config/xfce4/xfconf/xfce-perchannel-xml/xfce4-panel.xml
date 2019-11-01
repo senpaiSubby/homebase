@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="2"/>
+    <value type="int" value="1"/>
+    <property name="panel-2" type="empty">
+      <property name="position" type="string" value="p=8;x=960;y=1064"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="4"/>
+        <value type="int" value="3"/>
+      </property>
+      <property name="background-alpha" type="uint" value="90"/>
+    </property>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=96;y=25"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="length-adjust" type="bool" value="false"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="17"/>
+        <value type="int" value="20"/>
+        <value type="int" value="21"/>
+        <value type="int" value="14"/>
+        <value type="int" value="6"/>
+      </property>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-3" type="string" value="showdesktop"/>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+    </property>
+    <property name="plugin-7" type="string" value="tasklist">
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-handle" type="bool" value="false"/>
+    </property>
+    <property name="plugin-8" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-1" type="string" value="applicationsmenu">
+      <property name="show-button-title" type="bool" value="false"/>
+      <property name="button-icon" type="string" value="archlinux-logo-icon"/>
+    </property>
+    <property name="plugin-5" type="string" value="battery"/>
+    <property name="plugin-6" type="string" value="clock">
+      <property name="digital-format" type="string" value="%I:%M %p"/>
+    </property>
+    <property name="plugin-12" type="string" value="netload"/>
+    <property name="plugin-14" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="skypeforlinux"/>
+        <value type="string" value="blueman-applet"/>
+        <value type="string" value="syncthing-gtk"/>
+        <value type="string" value="udiskie"/>
+      </property>
+    </property>
+    <property name="plugin-15" type="string" value="power-manager-plugin"/>
+    <property name="plugin-16" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-17" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-20" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+    </property>
+    <property name="plugin-21" type="string" value="separator">
+      <property name="style" type="uint" value="1"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-25" type="string" value="whiskermenu"/>
+  </property>
+</channel>

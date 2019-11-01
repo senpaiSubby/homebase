@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Daft Punk.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1b101f",
+        "foreground": "#8db1ce",
+        "cursor": "#8db1ce"
+    },
+    "colors": {
+        "color0": "#1b101f",
+        "color1": "#9B255C",
+        "color2": "#B62A6A",
+        "color3": "#CD235E",
+        "color4": "#C92867",
+        "color5": "#A1417C",
+        "color6": "#086BA2",
+        "color7": "#8db1ce",
+        "color8": "#627b90",
+        "color9": "#9B255C",
+        "color10": "#B62A6A",
+        "color11": "#CD235E",
+        "color12": "#C92867",
+        "color13": "#A1417C",
+        "color14": "#086BA2",
+        "color15": "#8db1ce"
+    }
+}

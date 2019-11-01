@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Fog_Valley.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#060A1D",
+        "foreground": "#dce2e0",
+        "cursor": "#dce2e0"
+    },
+    "colors": {
+        "color0": "#060A1D",
+        "color1": "#718E96",
+        "color2": "#79969D",
+        "color3": "#93AAAC",
+        "color4": "#9DB1B2",
+        "color5": "#B2C2BE",
+        "color6": "#B9CAC8",
+        "color7": "#dce2e0",
+        "color8": "#9a9e9c",
+        "color9": "#718E96",
+        "color10": "#79969D",
+        "color11": "#93AAAC",
+        "color12": "#9DB1B2",
+        "color13": "#B2C2BE",
+        "color14": "#B9CAC8",
+        "color15": "#dce2e0"
+    }
+}

@@ -1,0 +1,5406 @@
+/*****************************************************************************/
+
+/* BOOTSTRAP DERIVED Utility Mixins                                          */
+
+/*                                                                           */
+
+/* Copyright 2012 Twitter, Inc.                                              */
+
+/*                                                                           */
+
+/* Modifications by Evernote.                                                */
+
+/*****************************************************************************/
+
+/* Make something unselectable (i.e. text on clickable stuff)
+ *
+ * Note: the "selectable" standard is still evolving, and we may need to change these.
+ */
+
+/* CSS3 Border shortcuts */
+
+/* Assigns background image. Supply only the "name" part of the image, as this
+ * will transform whatever @url you give to "images/@url.png" or "images/@url@2x.png"
+ * as necessary. The purpose of this function is to standardize naming and
+ * enforce retina support at the same time.
+ */
+
+/* Removes the background, including the retina version */
+
+/* Shorthand for setting height and max-height at once */
+
+/**
+ * A single place for all global note cursor modifications.
+ */
+
+html.nwse-resizing {
+  cursor: nwse-resize;
+}
+
+html.nwse-resizing * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.nwse-resizing img {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .handle {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .insertion {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .scrollbar {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .yline {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .en-cell-btn {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .en-table-btn {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing .en-imageresizer-trigger {
+  pointer-events: none !important;
+}
+
+html.nwse-resizing en-note img.en-media-image.en-media-selected {
+  border-color: transparent;
+}
+
+html.nwse-resizing en-tools .en-imageresizer-trigger {
+  visibility: hidden;
+}
+
+html.col-resizing {
+  cursor: col-resize;
+}
+
+html.col-resizing * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.col-resizing img {
+  pointer-events: none !important;
+}
+
+html.col-resizing .handle {
+  pointer-events: none !important;
+}
+
+html.col-resizing .insertion {
+  pointer-events: none !important;
+}
+
+html.col-resizing .scrollbar {
+  pointer-events: none !important;
+}
+
+html.col-resizing .en-cell-btn {
+  pointer-events: none !important;
+}
+
+html.col-resizing .en-table-btn {
+  pointer-events: none !important;
+}
+
+html.col-resizing .en-imageresizer-trigger {
+  pointer-events: none !important;
+}
+
+html.table-scrolling {
+  cursor: default;
+}
+
+html.table-scrolling * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.table-scrolling img {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .handle {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .insertion {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .scrollbar {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .yline {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .en-cell-btn {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .en-table-btn {
+  pointer-events: none !important;
+}
+
+html.table-scrolling .en-imageresizer-trigger {
+  pointer-events: none !important;
+}
+
+html.table-dragging {
+  cursor: -webkit-grabbing;
+}
+
+html.table-dragging * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.table-dragging img {
+  pointer-events: none !important;
+}
+
+html.table-dragging .handle {
+  pointer-events: none !important;
+}
+
+html.table-dragging .insertion {
+  pointer-events: none !important;
+}
+
+html.table-dragging .scrollbar {
+  pointer-events: none !important;
+}
+
+html.table-dragging .yline {
+  pointer-events: none !important;
+}
+
+html.table-dragging .en-cell-btn {
+  pointer-events: none !important;
+}
+
+html.table-dragging .en-table-btn {
+  pointer-events: none !important;
+}
+
+html.table-dragging .en-imageresizer-trigger {
+  pointer-events: none !important;
+}
+
+/***
+ * Font face definitions for common editor
+ ***/
+
+@font-face {
+  font-family: "Andale Mono";
+  src: local("Monospace");
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: local("Monospace");
+}
+
+@font-face {
+  font-family: "Arial Black";
+  src: local("Sans-Serif");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Impact";
+  src: local("Sans-Serif");
+  font-weight: bold;
+  font-stretch: condensed;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: local("Serif");
+}
+
+@font-face {
+  font-family: "Times New Roman";
+  src: local("Serif");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: rgba(0, 129, 194, 0.2);
+}
+
+::-moz-selection {
+  background: rgba(0, 129, 194, 0.2);
+}
+
+a {
+  color: #0000ee;
+}
+
+body.android {
+  display: block;
+  min-height: inherit;
+  font-family: "Helvetica Neue", Arial, sans, sans-serif;
+}
+
+body.ios {
+  min-height: 100%;
+  height: auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+}
+
+body.web {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #333;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body.web en-note {
+  font-size: 14px;
+}
+
+body.win {
+  position: relative;
+  border: 0px solid white;
+}
+
+body.win::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+body.win::-webkit-scrollbar:vertical {
+  width: 18px;
+}
+
+body.win::-webkit-scrollbar:horizontal {
+  height: 18px;
+}
+
+body.win::-webkit-scrollbar-thumb {
+  background-color: #d7d7d7;
+  border: 4px solid #fff;
+}
+
+body.win::-webkit-scrollbar-track {
+  background-color: #fff;
+  border: 4px solid #fff;
+}
+
+body.win::-webkit-scrollbar-track:hover {
+  background: #fff;
+  background: -webkit-linear-gradient(left, #f2f2f2, #f9f9f9);
+}
+
+body.fullsize {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.en-unselectable,
+.en-unselectable * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html.printing {
+  border-left: none;
+}
+
+html.printing body {
+  -webkit-print-color-adjust: exact;
+}
+
+.en-preload {
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_column-493ca1b5ac.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_column@2x-c14cf77730.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_column_hover-7744848c7a.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_column_hover@2x-ec1815e048.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_row-37d514c375.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_row@2x-f17831aabd.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_row_hover-e8cfb3e6d0.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/add_row_hover@2x-a18fe8dccd.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu-ad4efa6c01.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu@2x-921d26eeba.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu_hover-84535765a2.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu_hover@2x-3c09caeb93.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked-176215f068.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked@2x-c3c4ff13b7.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked-7590e8cd2c.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked@2x-11f80f43dc.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-unchecked-ed4d0e5dfd.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-unchecked@2x-16dd62aafb.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-checked-8aea89f504.png") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-checked@2x-87213c0ded.png") no-repeat -9999px -9999px;
+}
+
+body.android .en-preload {
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/checkbox_off-975fa7847b.svg") no-repeat -9999px -9999px, url("https://cdn1.evernote.com/ion/dist/ce/images/checkbox_on-e97b809ce4.svg") no-repeat -9999px -9999px;
+}
+
+en-note {
+  outline: none;
+  position: relative;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  z-index: 0;
+  overflow-wrap: break-word;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+body.android en-note {
+  padding: 16px 16px 0 16px;
+  -webkit-line-break: after-white-space;
+}
+
+body.mac en-note,
+body.win en-note {
+  padding: 16px 40px;
+}
+
+body.web en-note {
+  padding: 12px 40px 16px;
+}
+
+body.android.pb44 en-note {
+  padding-bottom: 44px;
+}
+
+body.mac.pb44 en-note,
+body.win.pb44 en-note,
+body.web.pb44 en-note {
+  padding-bottom: 60px;
+}
+
+body.pb44 en-note {
+  transition: padding-bottom 0.2s ease-in-out;
+}
+
+body.mac.pr80 en-note {
+  padding-right: 80px;
+}
+
+body.mac.pr-comments en-note {
+  padding-right: 284px;
+}
+
+body.ce-deactivated en-note,
+body.ce-deactivated en-tools,
+body.ce-deactivated en-template,
+body.ce-deactivated en-debug,
+body.ce-deactivated .en-context,
+body.ce-deactivated .en-context-info,
+body.ce-deactivated .en-context-upsell,
+body.ce-deactivated .en-template-select {
+  display: none;
+}
+
+en-tools {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+en-components {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+/***
+ * Conventions for common-editor
+ *
+ * We also define some standard values, to make sure we get a consistent visual
+ * experience, for example instead of <blockquote> we now use
+ * <div style="margin-left:40px">
+ ***/
+
+en-note,
+en-template {
+  line-height: 1.45 !important;
+  display: block;
+}
+
+en-note.viewmode,
+en-template.viewmode {
+  overflow-wrap: break-word;
+}
+
+en-note div,
+en-template div {
+  margin: 0;
+  padding: 0;
+}
+
+body.android en-note div,
+body.android en-template div {
+  max-width: 100%;
+}
+
+body.android en-note span,
+body.android en-template span {
+  max-width: 100%;
+}
+
+en-note p,
+en-template p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+en-note h1,
+en-template h1 {
+  margin: 0;
+  margin-bottom: 0.67em;
+}
+
+en-note h2,
+en-template h2 {
+  margin: 0;
+  margin-bottom: 0.83em;
+}
+
+en-note h3,
+en-template h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+en-note h4,
+en-template h4 {
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+en-note h5,
+en-template h5 {
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+}
+
+en-note h6,
+en-template h6 {
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+}
+
+en-note blockquote,
+en-template blockquote {
+  margin: 0 40px;
+}
+
+en-note ol,
+en-template ol,
+en-note ul,
+en-template ul,
+en-note dl,
+en-template dl {
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+}
+
+en-note li,
+en-template li {
+  margin: 0;
+  padding: 0;
+}
+
+en-note li[style*="direction:rtl"],
+en-template li[style*="direction:rtl"],
+en-note li[style*="direction: rtl"],
+en-template li[style*="direction: rtl"] {
+  /* A fix for the RTL bug in WebKit */
+  margin-right: 40px;
+  margin-left: -40px;
+  direction: rtl;
+}
+
+en-note th,
+en-template th {
+  font-weight: bold;
+  text-align: left;
+}
+
+en-note hr,
+en-template hr {
+  /* Horizontal rule is visually defined */
+  margin: 1px 0px;
+  padding-top: 1px;
+  border: none;
+  border-width: thick 0px;
+  border-style: solid none;
+  border-color: white;
+  background-color: #999;
+}
+
+en-note hr.selected,
+en-template hr.selected {
+  border-color: lightblue;
+}
+
+en-note mark,
+en-template mark {
+  background-color: #fffaa5;
+}
+
+en-note del,
+en-template del {
+  /* Make sure this is displayed correctly */
+  text-decoration: line-through;
+}
+
+en-note img:not(.en-media-placeholder):not(.en-richlink-placeholder),
+en-template img:not(.en-media-placeholder):not(.en-richlink-placeholder) {
+  /* Images should not exceed the editor's width */
+  max-width: 100%;
+  height: auto;
+}
+
+en-note a[href^="evernote:"],
+en-template a[href^="evernote:"] {
+  color: #69AA35;
+}
+
+body.android en-note a[href^="file:"],
+body.android en-template a[href^="file:"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  color: inherit;
+}
+
+body.web en-note a[href^="file:"],
+body.web en-template a[href^="file:"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  color: inherit;
+}
+
+en-note a[href],
+en-template a[href],
+en-note a[data-en-anchor-href],
+en-template a[data-en-anchor-href] {
+  -webkit-touch-callout: default;
+}
+
+en-note a[href] body.ios,
+en-template a[href] body.ios,
+en-note a[data-en-anchor-href] body.ios,
+en-template a[data-en-anchor-href] body.ios {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+en-note hr[style*="-evernote-encp-section-break: true"],
+en-template hr[style*="-evernote-encp-section-break: true"] {
+  display: none;
+}
+
+en-note en-table table td,
+en-template en-table table td {
+  word-break: break-word;
+}
+
+en-note table p,
+en-template table p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+body.android en-note table img,
+body.android en-template table img {
+  max-width: none;
+}
+
+body.ios en-note table img,
+body.ios en-template table img {
+  max-width: none;
+}
+
+body.web en-note table img,
+body.web en-template table img {
+  max-width: none;
+}
+
+en-note video,
+en-template video {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+@media only screen and (max-width: 650px) {
+  en-note,
+  en-template {
+    margin-left: 0;
+  }
+}
+
+en-debug {
+  z-index: 2147483647;
+  position: fixed;
+  bottom: 4px;
+  right: 4px;
+  border-radius: 50px;
+  background-color: #476E97;
+  color: white;
+  font-weight: normal;
+  padding: 2px 5px;
+  display: inline-block;
+  font-family: "Helvetica Neue", Consolas, "Courier New", monospace;
+  font-size: 11px;
+  text-align: center;
+  border: 5px solid transparent;
+  opacity: 0.8;
+}
+
+en-debug.editmode {
+  background-color: #488c3f;
+}
+
+en-debug.focused {
+  font-style: italic;
+}
+
+en-debug.dirty::before {
+  content: "* ";
+}
+
+en-debug en-settings {
+  width: 30px;
+}
+
+en-debug en-settings .hide {
+  display: none;
+}
+
+en-debug en-settings .featureslist {
+  position: absolute;
+  bottom: 30px;
+  left: -190px;
+  background: #f6f6f6;
+  width: 240px;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 2px rgba(197, 197, 197, 0.5);
+  font-family: "Helvetica Neue", Consolas, "Courier New", monospace;
+  z-index: 21474836479;
+}
+
+en-debug en-settings .featureslist .feature {
+  display: -webkit-flex;
+  display: flex;
+  font-size: 13px;
+  color: #3a3a3a;
+  font-weight: bold;
+  padding: 4px;
+}
+
+en-debug en-settings .featureslist .feature input {
+  margin-right: 8px;
+}
+
+en-adornments {
+  display: block;
+  pointer-events: none;
+}
+
+/* This file contains the styles necessary to support the note reformatting
+ * that is done by print.js to prepare a note for the printer.
+ *
+ * Written by Andrei Thorp, 2014 <athorp@evernote.com> */
+
+.printing en-debug {
+  display: none;
+}
+
+.printing en-components {
+  display: none;
+}
+
+/* Container for the entire printable copy of the note */
+
+#print-container #header-table td {
+  padding: 0px 10px 0px 0px;
+  width: 50%;
+}
+
+#print-container #header-table td .header-table-label {
+  font-weight: bold;
+}
+
+#print-container #header-title {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.en-print {
+  overflow-wrap: break-word;
+}
+
+.en-print en-table {
+  max-width: 100% !important;
+}
+
+.en-print en-table en-adornments {
+  display: none;
+}
+
+.en-print en-table table {
+  max-width: 100% !important;
+}
+
+.en-print en-table tr {
+  page-break-inside: avoid;
+}
+
+.en-print en-table.selected::before {
+  border: 1px solid #ccc;
+}
+
+.en-print en-table.selected td,
+.en-print en-table td.selected {
+  border-color: #ccc;
+}
+
+.en-print en-table.selected td::after,
+.en-print en-table td.selected::after {
+  content: initial;
+}
+
+.en-print.checkbox {
+  background-size: 18px 18px;
+  background-position: left;
+  background-repeat: no-repeat;
+  /* Stuff that every embed replacement div should have */
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 20px;
+  margin-left: 4px;
+}
+
+@media all {
+  .en-print.checkbox {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked-176215f068.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-print.checkbox {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked@2x-c3c4ff13b7.png");
+  }
+}
+
+.en-print.checkbox.checked {
+  background-size: 18px 18px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+@media all {
+  .en-print.checkbox.checked {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked-7590e8cd2c.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-print.checkbox.checked {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked@2x-11f80f43dc.png");
+  }
+}
+
+.en-print.pdf {
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-pdf-62076d2078.png");
+  /* Stuff that every embed replacement div should have */
+  display: inline-block;
+  vertical-align: middle;
+  /* Common attachment style for pdfs, audio, random files, etc */
+  width: 300px;
+  height: 43px;
+  border-radius: 2px;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #f0f0f0;
+  text-indent: 40px;
+  line-height: 43px;
+}
+
+.en-print.audio {
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-audio-860b1c8850.png");
+  /* Stuff that every embed replacement div should have */
+  display: inline-block;
+  vertical-align: middle;
+  /* Common attachment style for pdfs, audio, random files, etc */
+  width: 300px;
+  height: 43px;
+  border-radius: 2px;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #f0f0f0;
+  text-indent: 40px;
+  line-height: 43px;
+}
+
+.en-print.generic-attachment {
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-file-cda780f3a8.png");
+  /* Stuff that every embed replacement div should have */
+  display: inline-block;
+  vertical-align: middle;
+  /* Common attachment style for pdfs, audio, random files, etc */
+  width: 300px;
+  height: 43px;
+  border-radius: 2px;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #f0f0f0;
+  text-indent: 40px;
+  line-height: 43px;
+}
+
+.en-print img {
+  max-width: 100%;
+}
+
+@media print {
+  en-note {
+    overflow-wrap: break-word;
+  }
+
+  en-note en-table {
+    max-width: 100% !important;
+  }
+
+  en-note en-table en-adornments {
+    display: none;
+  }
+
+  en-note en-table table {
+    max-width: 100% !important;
+  }
+
+  en-note en-table tr {
+    page-break-inside: avoid;
+  }
+
+  en-note en-table.selected::before {
+    border: 1px solid #ccc;
+  }
+
+  en-note en-table.selected td,
+  en-note en-table td.selected {
+    border-color: #ccc;
+  }
+
+  en-note en-table.selected td::after,
+  en-note en-table td.selected::after {
+    content: initial;
+  }
+
+  en-note.checkbox {
+    background-size: 18px 18px;
+    background-position: left;
+    background-repeat: no-repeat;
+    /* Stuff that every embed replacement div should have */
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 20px;
+    margin-left: 4px;
+  }
+
+  en-note.checkbox.checked {
+    background-size: 18px 18px;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
+  en-note.pdf {
+    background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-pdf-62076d2078.png");
+    /* Stuff that every embed replacement div should have */
+    display: inline-block;
+    vertical-align: middle;
+    /* Common attachment style for pdfs, audio, random files, etc */
+    width: 300px;
+    height: 43px;
+    border-radius: 2px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #f0f0f0;
+    text-indent: 40px;
+    line-height: 43px;
+  }
+
+  en-note.audio {
+    background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-audio-860b1c8850.png");
+    /* Stuff that every embed replacement div should have */
+    display: inline-block;
+    vertical-align: middle;
+    /* Common attachment style for pdfs, audio, random files, etc */
+    width: 300px;
+    height: 43px;
+    border-radius: 2px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #f0f0f0;
+    text-indent: 40px;
+    line-height: 43px;
+  }
+
+  en-note.generic-attachment {
+    background: url("https://cdn1.evernote.com/ion/dist/ce/images/print-file-cda780f3a8.png");
+    /* Stuff that every embed replacement div should have */
+    display: inline-block;
+    vertical-align: middle;
+    /* Common attachment style for pdfs, audio, random files, etc */
+    width: 300px;
+    height: 43px;
+    border-radius: 2px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #f0f0f0;
+    text-indent: 40px;
+    line-height: 43px;
+  }
+
+  en-note img {
+    max-width: 100%;
+  }
+
+  en-components {
+    display: none;
+  }
+}
+
+@media print and all {
+  en-note.checkbox {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked-176215f068.png");
+  }
+}
+
+@media print and all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note.checkbox {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked@2x-c3c4ff13b7.png");
+  }
+}
+
+@media print and all {
+  en-note.checkbox.checked {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked-7590e8cd2c.png");
+  }
+}
+
+@media print and all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note.checkbox.checked {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked@2x-11f80f43dc.png");
+  }
+}
+
+/* This gets inlined into the main CSS file and turned on with
+ * the correct css classes on root */
+
+en-template.evernote-contact-1 {
+  margin-left: 24px;
+  margin-right: 24px;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  user-select: text;
+  /* More precisely */
+  /* Placeholder, style it your way */
+}
+
+body.ios en-template.evernote-contact-1 {
+  overflow: hidden;
+  margin: initial;
+  padding: 122px 24px 24px 24px;
+}
+
+en-template.evernote-contact-1 .en-editable,
+en-template.evernote-contact-1 .en-editable-preview {
+  display: block;
+  border: 1px solid transparent;
+}
+
+body.ios en-template.evernote-contact-1 .en-editable,
+body.ios en-template.evernote-contact-1 .en-editable-preview {
+  max-width: 200px;
+}
+
+en-template.evernote-contact-1 .en-editable-placeholder {
+  display: none;
+}
+
+en-template.evernote-contact-1.editable .en-editable:focus {
+  background-color: #fcfcfc;
+  border: 1px solid #cecece;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+en-template.evernote-contact-1.editable .en-editable:hover,
+en-template.evernote-contact-1.editable .en-editable-preview:hover {
+  border: 1px solid #cecece;
+  box-shadow: 0 1px 0 #ffffff;
+}
+
+en-template.evernote-contact-1.editable .en-editable-placeholder {
+  display: block;
+}
+
+en-template.evernote-contact-1.editable .en-editable-context select {
+  pointer-events: all;
+}
+
+en-template.evernote-contact-1.editable .en-editable-context {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAALCAYAAAC3ZUeVAAAAhElEQVQIHWP8//8/w+rVq5kZGBimAXFWaGjoXyYgAwRygDgNSjMwrl27Vubv37/XgAK8QPyZmZlZi+nPnz+ToQJAioEXxGcEmYkOYGaiiGMVZFm1atV6RkbGAJhSoHEbmFhYWHKBAp+hgp9BfKagoKAnQIFaqGAtiM8C5UwB0lpADKIZADBZKiD3ZfO8AAAAAElFTkSuQmCC") no-repeat right;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  en-template.evernote-contact-1.editable .en-editable-context {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAWCAYAAAD5Jg1dAAABGElEQVQoFdWTsY2DQBBF2eUEESW4AkIH1wW6BEQHF5kSHLiEc3QVIEFwFl04cHgVuARHIAH+f9jFGBvnHmk0s/PfrnaHQfV970ytKIovrpMkOUzragpWVRXUdf1PwPf9MIqii4W1TRibptkhrOgmZ1lsPLEsyzUqR7g7SE6L+BnH8YlrOREQxV+4hahJzWgD2HXdBgJPnNvaaI7K83zlui4fEMwps760bRtqQD8vILIBmfExZvdiuGvPIgXhHcAPdP4Pd5WJefGYg0YzMwDjlDyB2fBMp2l6xmfaPgGkRI2MtEdrvUdVpmS24WS0oY8YJY7UN5zRmtSMdms4504pxZPFmNtZZOHuy3iex7ue6SYnI/YwFEs/1xUD22lmqCYXBwAAAABJRU5ErkJggg==") no-repeat right;
+    background-size: 5px 11px;
+  }
+}
+
+en-template.evernote-contact-1 .en-editable-container {
+  width: 400px;
+}
+
+en-template.evernote-contact-1 .en-editable-preview {
+  margin-left: 76px;
+  padding-right: 30px;
+}
+
+en-template.evernote-contact-1 .en-editable-hidden {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+}
+
+en-template.evernote-contact-1 .en-editable-phone,
+en-template.evernote-contact-1 .en-editable-email,
+en-template.evernote-contact-1 .en-editable-address,
+en-template.evernote-contact-1 .en-editable-linkedin,
+en-template.evernote-contact-1 .en-editable-facebook,
+en-template.evernote-contact-1 .en-editable-weibo,
+en-template.evernote-contact-1 .en-editable-twitter {
+  margin-left: 76px;
+}
+
+en-template.evernote-contact-1 .en-editable-placeholder::before {
+  font-style: italic !important;
+  opacity: 0.5 !important;
+  content: attr(title);
+}
+
+en-template.evernote-contact-1 .en-editable-placeholder:focus::before {
+  content: "";
+}
+
+en-template.evernote-contact-1 .en-editable-context select {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  top: 1px;
+  left: -10px;
+  right: -6px;
+  outline: none;
+  cursor: hand;
+  opacity: 0;
+  border: 1px solid white;
+  font-size: 14px;
+  margin: 0;
+}
+
+en-template.evernote-contact-1 .en-editable-context {
+  padding-top: 1px;
+  position: relative;
+  display: block;
+  width: 66px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 4px;
+}
+
+en-template.evernote-contact-1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.ios en-template.evernote-contact-1 .en-editable-textarea {
+  width: 100% !important;
+  max-width: initial !important;
+  padding-right: 24px;
+}
+
+body.ios en-template.evernote-contact-1 div[style*="x-evernote:card-image"],
+body.ios en-template.evernote-contact-1 div[style*="x-evernote: card-image"] {
+  width: auto !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+body.ios en-template.evernote-contact-1 div[style*="x-evernote:card-image"] img.en-media.en-media-image,
+body.ios en-template.evernote-contact-1 div[style*="x-evernote: card-image"] img.en-media.en-media-image {
+  width: 100% !important;
+  margin: 0px !important;
+}
+
+en-template.evernote-food-meal-2 {
+  margin-left: 24px;
+  margin-right: 24px;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-meal-review {
+  display: block;
+  border: 1px solid transparent;
+  padding: 8px;
+  /*padding-left: 15px;*/
+  margin: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-meal-review:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(130, 169, 178, 0.7);
+  box-shadow: 0 1px 0 #ffffff;
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-meal-review:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #82a9b2;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-caption-text {
+  display: block;
+  border: 1px solid transparent;
+  padding: 8px;
+  margin: 0;
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-bottom: -2px;
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-caption-text:hover {
+  border: 1px solid rgba(130, 169, 178, 0.7);
+}
+
+en-template.evernote-food-meal-2 .en-evernote-food-meal-2-caption-text:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(130, 169, 178, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+/* Attachment Icons */
+
+.en-attach-img-icon {
+  width: 36px;
+  height: 36px;
+  -webkit-user-modify: read-only;
+  user-modify: read-only;
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  min-width: 36px;
+  position: relative;
+}
+
+.en-attach-img-icon.en-attach-icon-ppt {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-PowerPoint.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-pdf {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Pdf.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-image {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Photo.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-video {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Video.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-font {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Font");
+}
+
+.en-attach-img-icon.en-attach-icon-word {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Word.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-keynote {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Keynote.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-audio {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Audio.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-excel {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Excel.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-numbers {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Numbers.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-pages {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Pages.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-svg {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Vector.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-editing {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Editing.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-zip {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Zip.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-3d {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-3d.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-gdocs {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gdocs_40-2c8775ec17.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-gsheets {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gsheets_40-b8dd80fee5.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-gslides {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gslides_40-c8a92171b0.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-map {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_maps_40-c0bbffb7e7.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-after_affects {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-AfterAffects.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-animate {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Animate.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-dream_weaver {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-DreamWeaver.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-evernote {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Evernote.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-flash_builder {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-FlashBuilder.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-illustrator {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Illustrator.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-link {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Link.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-photoshop {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Photoshop.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-premier {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Premier.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-generic {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Generic.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-unknown {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Unknown.svg");
+}
+
+.en-attach-img-icon.en-attach-icon-gdrive {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/content://com.evernote.evernoteprovider/driveIcon");
+}
+
+.en-code,
+en-codeblock {
+  background-color: #eee;
+  padding: 2px 8px;
+  font-family: monospace;
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333333;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #fbfaf8;
+  border: 1px solid rgba(0, 0, 0, 0.14902);
+  background-position: initial initial;
+  background-repeat: initial initial;
+}
+
+en-codeblock {
+  display: block;
+}
+
+tt {
+  background-color: #f0f0f0;
+  padding: 2px 0;
+  color: #cd4c62;
+  border: solid 1px #d5d5d5;
+}
+
+body.ios #en-note .en-crypt.en-crypt-placeholder,
+body.ios #print-container .en-crypt.en-crypt-placeholder,
+body.ios #en-note .en-crypto.en-crypt-placeholder,
+body.ios #print-container .en-crypto.en-crypt-placeholder,
+body.ios #en-note .en-crypt.en-crypto-placeholder,
+body.ios #print-container .en-crypt.en-crypto-placeholder,
+body.ios #en-note .en-crypto.en-crypto-placeholder,
+body.ios #print-container .en-crypto.en-crypto-placeholder {
+  display: inline-block;
+  width: 84px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0 8px;
+  background-size: 84px 18px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+@media all {
+  body.ios #en-note .en-crypt.en-crypt-placeholder,
+  body.ios #print-container .en-crypt.en-crypt-placeholder,
+  body.ios #en-note .en-crypto.en-crypt-placeholder,
+  body.ios #print-container .en-crypto.en-crypt-placeholder,
+  body.ios #en-note .en-crypt.en-crypto-placeholder,
+  body.ios #print-container .en-crypt.en-crypto-placeholder,
+  body.ios #en-note .en-crypto.en-crypto-placeholder,
+  body.ios #print-container .en-crypto.en-crypto-placeholder {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-ios-250878f7f1.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.ios #en-note .en-crypt.en-crypt-placeholder,
+  body.ios #print-container .en-crypt.en-crypt-placeholder,
+  body.ios #en-note .en-crypto.en-crypt-placeholder,
+  body.ios #print-container .en-crypto.en-crypt-placeholder,
+  body.ios #en-note .en-crypt.en-crypto-placeholder,
+  body.ios #print-container .en-crypt.en-crypto-placeholder,
+  body.ios #en-note .en-crypto.en-crypto-placeholder,
+  body.ios #print-container .en-crypto.en-crypto-placeholder {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-ios@2x-12329914e8.png");
+  }
+}
+
+body.mac #en-note .en-crypt.en-crypt-placeholder,
+body.mac #print-container .en-crypt.en-crypt-placeholder,
+body.mac #en-note .en-crypto.en-crypt-placeholder,
+body.mac #print-container .en-crypto.en-crypt-placeholder,
+body.mac #en-note .en-crypt.en-crypto-placeholder,
+body.mac #print-container .en-crypt.en-crypto-placeholder,
+body.mac #en-note .en-crypto.en-crypto-placeholder,
+body.mac #print-container .en-crypto.en-crypto-placeholder {
+  width: 71px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 71px 20px;
+  border: thin solid gray;
+  border-radius: 4px;
+}
+
+@media all {
+  body.mac #en-note .en-crypt.en-crypt-placeholder,
+  body.mac #print-container .en-crypt.en-crypt-placeholder,
+  body.mac #en-note .en-crypto.en-crypt-placeholder,
+  body.mac #print-container .en-crypto.en-crypt-placeholder,
+  body.mac #en-note .en-crypt.en-crypto-placeholder,
+  body.mac #print-container .en-crypt.en-crypto-placeholder,
+  body.mac #en-note .en-crypto.en-crypto-placeholder,
+  body.mac #print-container .en-crypto.en-crypto-placeholder {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-mac-83c1c33c11.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac #en-note .en-crypt.en-crypt-placeholder,
+  body.mac #print-container .en-crypt.en-crypt-placeholder,
+  body.mac #en-note .en-crypto.en-crypt-placeholder,
+  body.mac #print-container .en-crypto.en-crypt-placeholder,
+  body.mac #en-note .en-crypt.en-crypto-placeholder,
+  body.mac #print-container .en-crypt.en-crypto-placeholder,
+  body.mac #en-note .en-crypto.en-crypto-placeholder,
+  body.mac #print-container .en-crypto.en-crypto-placeholder {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-mac@2x-75217616f8.png");
+  }
+}
+
+body.win #en-note .en-crypt.en-crypt-placeholder,
+body.win #print-container .en-crypt.en-crypt-placeholder,
+body.win #en-note .en-crypto.en-crypt-placeholder,
+body.win #print-container .en-crypto.en-crypt-placeholder,
+body.win #en-note .en-crypt.en-crypto-placeholder,
+body.win #print-container .en-crypt.en-crypto-placeholder,
+body.win #en-note .en-crypto.en-crypto-placeholder,
+body.win #print-container .en-crypto.en-crypto-placeholder {
+  width: 93px;
+  height: 18px;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-web-74cd51f400.gif");
+  background-size: 93px 18px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+body.android #en-note .en-crypt.en-crypt-placeholder,
+body.android #print-container .en-crypt.en-crypt-placeholder,
+body.android #en-note .en-crypto.en-crypt-placeholder,
+body.android #print-container .en-crypto.en-crypt-placeholder,
+body.android #en-note .en-crypt.en-crypto-placeholder,
+body.android #print-container .en-crypt.en-crypto-placeholder,
+body.android #en-note .en-crypto.en-crypto-placeholder,
+body.android #print-container .en-crypto.en-crypto-placeholder {
+  width: 3em;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-size: 3em 1em;
+  border: thin solid gray;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-android-fefa85651b.png");
+  margin-top: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+body.web #en-note .en-crypt.en-crypt-placeholder,
+body.web #print-container .en-crypt.en-crypt-placeholder,
+body.web #en-note .en-crypto.en-crypt-placeholder,
+body.web #print-container .en-crypto.en-crypt-placeholder,
+body.web #en-note .en-crypt.en-crypto-placeholder,
+body.web #print-container .en-crypt.en-crypto-placeholder,
+body.web #en-note .en-crypto.en-crypto-placeholder,
+body.web #print-container .en-crypto.en-crypto-placeholder {
+  width: 93px;
+  height: 18px;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/crypt-placeholder-web-74cd51f400.gif");
+  background-size: 93px 18px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#en-note .en-crypt.en-crypt-revealed,
+#print-container .en-crypt.en-crypt-revealed,
+#en-note .en-crypto.en-crypt-revealed,
+#print-container .en-crypto.en-crypt-revealed,
+#en-note .en-crypt.en-crypto-revealed,
+#print-container .en-crypt.en-crypto-revealed,
+#en-note .en-crypto.en-crypto-revealed,
+#print-container .en-crypto.en-crypto-revealed {
+  border: thin solid gray;
+  margin: 0;
+  padding: 4px;
+  white-space: pre-wrap;
+}
+
+body.ios #en-note .en-crypt.en-crypt-revealed,
+body.ios #print-container .en-crypt.en-crypt-revealed,
+body.ios #en-note .en-crypto.en-crypt-revealed,
+body.ios #print-container .en-crypto.en-crypt-revealed,
+body.ios #en-note .en-crypt.en-crypto-revealed,
+body.ios #print-container .en-crypt.en-crypto-revealed,
+body.ios #en-note .en-crypto.en-crypto-revealed,
+body.ios #print-container .en-crypto.en-crypto-revealed {
+  display: block;
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-color: #e0f4e8;
+  padding-left: auto;
+  border-radius: 4px;
+  border: thin solid gray;
+  color: #000;
+  -webkit-user-modify: read-only;
+}
+
+body.ios #en-note .en-crypt .cryptEndBullet,
+body.ios #print-container .en-crypt .cryptEndBullet,
+body.ios #en-note .en-crypto .cryptEndBullet,
+body.ios #print-container .en-crypto .cryptEndBullet {
+  margin: 0px 8px 0px 8px;
+  position: relative;
+  top: 1px;
+  -webkit-user-select: none;
+  width: 8px;
+  height: 11px;
+}
+
+en-note .en-emoticon {
+  -webkit-user-modify: read-only;
+  user-modify: read-only;
+}
+
+en-tools {
+  /*** Find Search Results ***/
+}
+
+en-tools .en-find-result {
+  z-index: 2147475647;
+}
+
+en-tools .en-find-result:not(.en-resource) {
+  /* let's use same class as common selector for match layers and outlined resources */
+  border-style: solid;
+  border-width: 2px;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  border-radius: 3px;
+  border-color: #f6b727;
+  pointer-events: none;
+  background-color: rgba(252, 225, 157, 0.5);
+}
+
+en-tools .en-find-result-active:not(.en-resource) {
+  border-color: #e57d24;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+en-tools .en-find-result.en-resource .en-resource-wrapper {
+  border: 2px solid #f6b727;
+  top: -1px;
+  left: -1px;
+}
+
+en-search {
+  font-family: "Segoe UI Symbol", "Trebuchet MS";
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f9f9f9;
+  border-top: 1px solid #bbb;
+  padding: 8px 2px;
+  z-index: 100000000000;
+  overflow: hidden;
+}
+
+en-search .en-search-controls {
+  width: 465px;
+  float: left;
+}
+
+en-search .en-search-row * {
+  margin-right: 2px;
+}
+
+en-search .en-search-row > input,
+en-search .en-search-row > button {
+  vertical-align: middle;
+}
+
+en-search .en-search-row > input:focus,
+en-search .en-search-row > button:focus {
+  outline: none;
+}
+
+en-search .en-search-row .en-search-input {
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+  border: 1px solid #c8c8e0;
+  background-color: #fff;
+  width: 200px;
+  padding: 2px 5px;
+  height: 25px;
+}
+
+en-search .en-search-row .en-search-input::-webkit-input-placeholder {
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+  font-style: italic;
+  color: #777;
+}
+
+en-search .en-search-row button {
+  font-family: "Segoe UI Symbol", "Trebuchet MS";
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+  padding: 1px 7px;
+  text-align: left;
+  border: none;
+  background: transparent;
+  line-height: 23px;
+}
+
+en-search .en-search-row button:not([class*=replace]):before {
+  top: 0;
+  left: 0;
+  display: inline-block;
+  content: ' ';
+  position: absolute;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  padding: 0px 6px;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-find-note-icons-f68fe83546.png");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+}
+
+en-search .en-search-row button[class*=find] {
+  padding: 1px 5px 1px 21px;
+}
+
+en-search .en-search-row button.en-find-next-btn:before {
+  background-position: -6px center;
+}
+
+en-search .en-search-row button.en-find-prev-btn:before {
+  background-position: -18px center;
+}
+
+en-search .en-search-row button:hover {
+  box-shadow: 0 0 0 1px rgba(0, 191, 255, 0.7) inset;
+  background-color: rgba(0, 191, 255, 0.1) !important;
+}
+
+en-search .en-search-row [type=checkbox] {
+  margin: 5px 5px 5px 12px;
+  text-align: center;
+  border: 0;
+  height: 12px;
+  width: 12px;
+}
+
+en-search .en-search-row [type=checkbox]:after {
+  display: inline-block;
+  content: '';
+  background: white;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+en-search .en-search-row [type=checkbox]:checked:after {
+  background: #FFF url("https://cdn1.evernote.com/ion/dist/ce/images/en-check-e01d3576e4.svg") no-repeat 50%;
+}
+
+en-search .en-search-row .en-find-match-case-text {
+  display: inline-block;
+  line-height: 25px;
+  vertical-align: bottom;
+}
+
+en-search .en-find-row .en-search-close-btn {
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+en-search .en-find-row .en-search-close-btn:before {
+  background-position: 6px center !important;
+}
+
+en-search .en-replace-row {
+  margin-top: 3px;
+  padding-left: 26px;
+}
+
+en-search .en-status-row {
+  font-family: "Trebuchet MS";
+  line-height: 25px;
+  float: left;
+  font-style: italic;
+  color: #777;
+}
+
+en-note img.en-media-image {
+  cursor: default;
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 1px;
+  margin: 0;
+  vertical-align: text-bottom;
+}
+
+body.ios en-note img.en-media-image {
+  border: none;
+}
+
+en-note img.en-media-selected {
+  box-shadow: 0 0 0 1px #0081C2, inset 0 0 0 1px #0081C2;
+}
+
+body.win en-note img.en-media-selected,
+body.mac en-note img.en-media-selected {
+  cursor: -webkit-zoom-in;
+}
+
+en-note img.en-media-selected::selection {
+  background-color: transparent;
+}
+
+en-tools .en-imageresizer-trigger {
+  width: 18px;
+  height: 18px;
+  cursor: nwse-resize;
+  display: none;
+  margin-left: -12px;
+  margin-top: -12px;
+  position: absolute;
+  z-index: 10;
+}
+
+en-tools .en-imageresizer-trigger:before {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #0081C2;
+  left: 7px;
+  top: 8px;
+}
+
+body.preview en-tools .en-imageresizer-trigger {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+en-tools .en-imageresizer-frame {
+  position: absolute;
+  z-index: 9;
+  border: 2px solid #0081C2;
+  box-sizing: content-box;
+}
+
+en-tools .en-imageresizer-frame:after {
+  width: 18px;
+  height: 18px;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #0081C2;
+  position: absolute;
+  bottom: -6px;
+  right: -5px;
+}
+
+html.scrolling-x en-tools .en-imageresizer-trigger {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+ul,
+ol,
+li {
+  border: 1px solid transparent;
+}
+
+ul > ol,
+ol > ul,
+ul > ul,
+ol > ol {
+  border: 0;
+}
+
+body.mac en-note embed.en-media {
+  cursor: hand !important;
+  max-width: 100% !important;
+}
+
+body.win en-note img.en-media.en-media-pdf {
+  height: auto;
+}
+
+en-note en-media,
+en-note .en-media {
+  /* FIXME this is a fragile way to solve this problem. See CE-401 */
+}
+
+body.mac en-note en-media embed[type='evernote/x-attachment']:not([height='43']),
+body.mac en-note .en-media embed[type='evernote/x-attachment']:not([height='43']),
+body.mac en-note en-media embed[type='evernote/x-pdf']:not([height='43']),
+body.mac en-note .en-media embed[type='evernote/x-pdf']:not([height='43']) {
+  max-width: 98% !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
+}
+
+en-note en-media.en-media-file,
+en-note .en-media.en-media-file {
+  background-color: transparent;
+  border: none;
+}
+
+body.win en-note en-media.en-media-file,
+body.win en-note .en-media.en-media-file {
+  box-sizing: initial;
+}
+
+body.win en-note en-media.en-media-file.en-media-pdf,
+body.win en-note .en-media.en-media-file.en-media-pdf {
+  border-radius: 0px;
+}
+
+body.android en-note en-media.en-media-file,
+body.android en-note .en-media.en-media-file {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  color: #212121;
+  font-family: sans-serif;
+  font-size: 12px;
+  height: 40px;
+  outline: none;
+  position: relative;
+  width: 320px;
+}
+
+body.android en-note en-media.en-media-file .en-resource-context,
+body.android en-note .en-media.en-media-file .en-resource-context {
+  display: inline-block;
+  position: absolute;
+  right: 2px;
+  height: 100%;
+}
+
+body.android en-note en-media.en-media-file .en-resource-context img,
+body.android en-note .en-media.en-media-file .en-resource-context img {
+  x-margin-top: 12px;
+  max-height: 36px;
+}
+
+body.android en-note en-media.en-media-file .en-resource-context-overflow,
+body.android en-note .en-media.en-media-file .en-resource-context-overflow {
+  min-width: 2px;
+}
+
+en-note en-media.en-media-rendered,
+en-note .en-media.en-media-rendered {
+  border-radius: 6px;
+  width: 130px;
+  height: auto;
+  margin-right: 3px;
+  background: #f6f6f6;
+  transition: background 0.1s ease-out;
+  cursor: default;
+}
+
+en-note en-media.en-media-rendered[data-state="loaded"],
+en-note .en-media.en-media-rendered[data-state="loaded"] {
+  cursor: pointer;
+}
+
+en-note en-media.en-media-rendered[data-state="loaded"]:hover,
+en-note .en-media.en-media-rendered[data-state="loaded"]:hover {
+  background: #e9e9e9;
+}
+
+body.win en-note td .en-media-file {
+  max-width: 100%;
+}
+
+.en-richlink-disabled-state {
+  filter: alpha(opacity=30);
+  opacity: 0.3;
+}
+
+.file-icon-minimal-base {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 22px;
+  height: 24px;
+  min-width: 22px;
+  text-align: center;
+  position: relative;
+  margin-right: 2px;
+}
+
+#en-note .en-richlink {
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
+  background-color: white;
+}
+
+#en-note .en-richlink:hover {
+  background-color: #f3f8ff;
+  border-color: #cad5e7;
+}
+
+#en-note .en-attach-img-icon-base {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+}
+
+#en-note .richlink-minimal-title {
+  text-overflow: ellipsis;
+  position: relative;
+  margin-left: 24px;
+  width: auto;
+  max-width: none;
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-loading::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  animation: loading-progress 1s steps(8) infinite;
+  -webkit-animation: loading-progress 1s steps(8) infinite;
+  -moz-animation: loading-progress 1s steps(8) infinite;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/loading_progress-65060afc3f.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-ppt::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-PowerPoint.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-pdf::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Pdf.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-image::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Photo.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-video::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Video.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-font::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Font");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-word::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Word.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-keynote::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Keynote.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-audio::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Audio.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-excel::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Excel.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-numbers::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Numbers.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-pages::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Pages.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-svg::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Vector.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-editing::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Editing.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-zip::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Zip.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-3d::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-3d.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-gdocs::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gdocs_40-2c8775ec17.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-gsheets::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gsheets_40-b8dd80fee5.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-gslides::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gslides_40-c8a92171b0.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-map::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_maps_40-c0bbffb7e7.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-after_affects::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-AfterAffects.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-animate::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Animate.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-dream_weaver::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-DreamWeaver.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-evernote::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Evernote.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-flash_builder::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-FlashBuilder.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-illustrator::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Illustrator.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-link::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Link.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-photoshop::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Photoshop.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-premier::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Premier.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-generic::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Generic.svg");
+}
+
+#en-note .richlink-minimal-title.en-attach-icon-unknown::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/Affix-Unknown.svg");
+}
+
+#en-note .en-richlink-link-body {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
+  font-family: sans-serif;
+  padding: 0 0;
+  box-shadow: 0 1px 0 rgba(219, 219, 219, 0.5);
+  box-sizing: null;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+#en-note .en-richlink-link-body:active {
+  background-color: #f3f8ff;
+  border: 1px solid #cad5e7;
+}
+
+#en-note .en-richlink-link-body:hover {
+  background-color: #f3f8ff;
+  border: 1px solid #cad5e7;
+}
+
+#en-note .en-richlink-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#en-note .en-richlink-icon {
+  width: 48px;
+  height: 48px;
+  margin: auto;
+}
+
+#en-note .en-richlink-padding {
+  display: table-cell;
+  height: 48px;
+  width: 8px;
+}
+
+#en-note .divider {
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 1px;
+  float: right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#en-note .en-richlink-fav-icon-container {
+  width: 24px;
+  height: 24px;
+}
+
+#en-note .en-richlink-fav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+#en-note .en-richlink-url-text {
+  font-size: medium;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+#en-note .en-richlink-title-text {
+  font-size: 120%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: bold;
+  color: #575757;
+}
+
+#en-note .en-richlink-name-text {
+  font-size: 90%;
+  font-weight: bold;
+}
+
+#en-note .en-richlink-snippet-text {
+  color: #595959;
+  line-height: 130%;
+}
+
+#en-note div.more-options {
+  width: 34px;
+  height: 100%;
+  min-height: 54px;
+  min-width: 34px;
+  margin: auto;
+  vertical-align: middle;
+  position: relative;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+}
+
+#en-note div.more-options:hover,
+#en-note div.more-options:active {
+  background-color: rgba(206, 217, 255, 0.3);
+  cursor: pointer;
+}
+
+#en-note img.more-options-icon {
+  width: 14px;
+  height: 14px;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: 14px 14px;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/overflow_menu-f472ae1bf3.svg");
+  cursor: pointer;
+}
+
+#en-note div.file-icon {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  text-align: center;
+  position: relative;
+}
+
+#en-note .en-attach-src {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 27px;
+  top: 24px;
+  background-size: 24px 24px;
+}
+
+#en-note .en-attach-src.en-attach-src-google {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_src_icon_google_28-f35f4dadb5.svg");
+}
+
+#en-note .en-attach-src.en-attach-src-dropbox {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_src_icon_dropbox_28-7f9ef01b50.svg");
+}
+
+#en-note .en-attach-src.en-attach-src-evernote {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_src_icon_evernote_28-d37c10d6f2.svg");
+}
+
+#en-note div.en-richlink-load-progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+#en-note div.en-richlink-load-progress-container-inner {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+#en-note div.en-richlink-load-progress {
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  animation: loading-progress 1s steps(8) infinite;
+  -webkit-animation: loading-progress 1s steps(8) infinite;
+  -moz-animation: loading-progress 1s steps(8) infinite;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/loading_progress-65060afc3f.svg");
+}
+
+@keyframes loading-progress {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading-progress {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+en-note .en-todo,
+en-tools .en-todo {
+  height: 18px;
+  width: 24px;
+  margin: 2px 0;
+  vertical-align: middle;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  border: none;
+  cursor: pointer;
+  background-position: left center;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+@media all {
+  en-note .en-todo,
+  en-tools .en-todo {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked-176215f068.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note .en-todo,
+  en-tools .en-todo {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-unchecked@2x-c3c4ff13b7.png");
+  }
+}
+
+@media all {
+  en-note .en-todo:hover,
+  en-tools .en-todo:hover {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-checked-8aea89f504.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note .en-todo:hover,
+  en-tools .en-todo:hover {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-checked@2x-87213c0ded.png");
+  }
+}
+
+@media all {
+  en-note .en-todo[checked="true"],
+  en-tools .en-todo[checked="true"] {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked-7590e8cd2c.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note .en-todo[checked="true"],
+  en-tools .en-todo[checked="true"] {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-checked@2x-11f80f43dc.png");
+  }
+}
+
+@media all {
+  en-note .en-todo[checked="true"]:hover,
+  en-tools .en-todo[checked="true"]:hover {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-unchecked-ed4d0e5dfd.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  en-note .en-todo[checked="true"]:hover,
+  en-tools .en-todo[checked="true"]:hover {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/todo-before-unchecked@2x-16dd62aafb.png");
+  }
+}
+
+/* This Less module styles Context. The default style is for Mac. */
+
+.en-context-popup {
+  z-index: 2147483647;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 1px #d9d9d9;
+}
+
+body.mac .en-context-popup {
+  transition: opacity 200ms linear;
+}
+
+.en-context-popup.en-context-popup-visible {
+  opacity: 1;
+}
+
+.en-context-popup .en-context-popup-wrapper {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  width: 289px;
+  cursor: pointer;
+}
+
+.en-context-popup .en-context-popup-wrapper::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  left: 50%;
+  bottom: -8px;
+  background-color: #f7f7f7;
+  -moz-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transform: matrix(0.459619, 0.707107, -0.459619, 0.707107, 1, 1);
+  transform: matrix(0.459619, 0.707107, -0.459619, 0.707107, 1, 1);
+  z-index: -1;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1px #d9d9d9;
+  content: " ";
+}
+
+.en-context-popup .en-context-popup-wrapper .en-context-popup-header {
+  padding: 11px 15px 8px 15px;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+  letter-spacing: 1.1px;
+  text-shadow: #54687b 0.1px 0px;
+  line-height: 12px;
+}
+
+body.win .en-context-popup .en-context-popup-wrapper .en-context-popup-header {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+.en-context-popup .en-context-popup-wrapper .en-context-popup-body {
+  margin: 14px 15px 14px 15px;
+  padding-left: 30px;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+  text-shadow: #54687b 0.1px 0px;
+  letter-spacing: 0.7px;
+  line-height: 18px;
+  background-position: left center;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+body.win .en-context-popup .en-context-popup-wrapper .en-context-popup-body {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.news {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-news-3b1dbc25e8.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.news {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-news@2x-c99d9d44ce.png");
+  }
+}
+
+@media all {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.note {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-note-2b109b7cdc.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.note {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-note@2x-06b97ec73f.png");
+  }
+}
+
+@media all {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.people {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-people-1b9363333b.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-body.people {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/popup-people@2x-40ea330b87.png");
+  }
+}
+
+.en-context-popup .en-context-popup-wrapper .en-context-popup-footer {
+  padding: 0px 15px 14px 45px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #008ae2;
+  cursor: pointer;
+}
+
+.en-context-popup .en-context-popup-wrapper .en-context-popup-footer .en-context-popup-down-arrow {
+  display: inline-block;
+  background-position: right bottom;
+  margin-left: 5px;
+  width: 7px;
+  height: 12px;
+  background-size: 7px 9px;
+  background-repeat: no-repeat;
+}
+
+@media all {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-footer .en-context-popup-down-arrow {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down-634ec74a23.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-popup .en-context-popup-wrapper .en-context-popup-footer .en-context-popup-down-arrow {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down@2x-c186c154c0.png");
+  }
+}
+
+.en-context {
+  z-index: 2147477647;
+  background-color: white;
+  margin: 0px 20px 15px 20px;
+  padding-top: 15px;
+  border-top: 1px #e2e2e2 solid;
+  position: relative;
+  overflow: hidden;
+  margin: 14px;
+  padding: 14px 0px 5px 15px;
+}
+
+.en-context .en-context-label {
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+  padding-left: 29px;
+  background-position: left center;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+body.win .en-context .en-context-label {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  body.mac .en-context .en-context-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-icon-header-cafcfd08f4.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-icon-header@2x-fcff1f87c7.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/context-icon-header-02b341483b.png");
+  }
+}
+
+.en-context .en-context-hide-label {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  padding-right: 12px;
+  min-height: 9px;
+  cursor: pointer;
+  background-position: right center;
+  background-size: 7px 9px;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+}
+
+body.win .en-context .en-context-hide-label {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  body.mac .en-context .en-context-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-up-5778e363f6.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-up@2x-cbf4788469.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/context-arrow-up-0d80bc86a5.png");
+  }
+}
+
+.en-context .en-context-show-label {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  padding-right: 12px;
+  min-height: 9px;
+  cursor: pointer;
+  background-position: right center;
+  background-size: 7px 9px;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+}
+
+body.win .en-context .en-context-show-label {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  body.mac .en-context .en-context-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down-634ec74a23.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down@2x-c186c154c0.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/context-arrow-down-b21d8a570f.png");
+  }
+}
+
+.en-context .en-context-fle-container {
+  margin: 30px auto;
+  max-width: 573px;
+  padding-right: 15px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body.win .en-context .en-context-fle-container {
+  height: 124px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  padding-top: 8px;
+  overflow: hidden;
+}
+
+.en-context .en-context-fle-container .en-context-fle-header {
+  font-size: 14px;
+  line-height: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+  margin-bottom: 12px;
+}
+
+.en-context .en-context-fle-container .en-context-fle-body {
+  margin-bottom: 12px;
+}
+
+.en-context .en-context-fle-container .en-context-fle-body .en-context-fle-subheader {
+  font-size: 12px;
+  line-height: 15px;
+  color: #696969;
+}
+
+body.win .en-context .en-context-fle-container .en-context-fle-body .en-context-fle-subheader {
+  color: #3b3b3b;
+}
+
+.en-context .en-context-fle-container .en-context-fle-body .en-context-fle-learn-more {
+  font-size: 12px;
+  line-height: 15px;
+  color: #008ae2;
+  cursor: pointer;
+}
+
+body.win .en-context .en-context-fle-container .en-context-fle-body .en-context-fle-learn-more {
+  color: #618cd4;
+  text-decoration: underline;
+}
+
+.en-context .en-context-fle-container .en-context-fle-dismiss-button {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+body.mac .en-context .en-context-fle-container .en-context-fle-dismiss-button {
+  border-radius: 6px;
+  padding: 9px 15px;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  background-color: #04b5ff;
+  background-image: linear-gradient(top, #00bfff, #09a5ff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00bfff', endColorstr='#ff09a5ff', GradientType=0);
+}
+
+body.win .en-context .en-context-fle-container .en-context-fle-dismiss-button {
+  background-color: #2580dc;
+  border: 1px solid #216dbb;
+  line-height: 28px;
+  padding: 0px 12px;
+}
+
+body.win .en-context .en-context-fle-container .en-context-fle-dismiss-button:hover {
+  background-color: #2377ce;
+  border-color: #1e5d9c;
+}
+
+body.mac .en-context .en-context-fle-container .en-context-fle-dismiss-button:active {
+  background-color: #05afff;
+  background-image: linear-gradient(top, #09a5ff, #00bfff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff09a5ff', endColorstr='#ff00bfff', GradientType=0);
+}
+
+body.win .en-context .en-context-fle-container .en-context-fle-dismiss-button:active {
+  background-color: #2369b4;
+  border-color: #1e5a97;
+}
+
+.en-context .en-context-card-holder {
+  position: relative;
+}
+
+.en-context .en-context-card-holder .en-context-item {
+  position: relative;
+  width: 279px;
+  height: 122px;
+  border: 1px solid #e2e2e2;
+  background-color: white;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  display: inline-block;
+  text-align: left;
+  overflow: hidden;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item {
+  border: 1px solid #d0d0d0;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-title {
+  display: inline-block;
+  text-decoration: none;
+  margin: 10px 0px 0px 10px;
+  color: black;
+  line-height: 20px;
+  max-height: 40px;
+  font-size: 14px;
+  width: 169px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-item-title {
+  font-size: 12px;
+  color: black;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-title.en-context-wide {
+  width: 259px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-title:link,
+.en-context .en-context-card-holder .en-context-item .en-context-item-title:visited,
+.en-context .en-context-card-holder .en-context-item .en-context-item-title:hover,
+.en-context .en-context-card-holder .en-context-item .en-context-item-title:active {
+  text-decoration: none;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 90px;
+  height: 122px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper {
+  width: 82px;
+  height: 114px;
+  top: 4px;
+  right: 4px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic {
+  width: auto;
+  height: 122px;
+  position: relative;
+  margin: -1px;
+  padding: 1px;
+}
+
+body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic {
+  -webkit-filter: brightness(0.97);
+  -moz-filter: brightness(0.97);
+  -ms-filter: brightness(0.97);
+  -o-filter: brightness(0.97);
+  filter: brightness(0.97);
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 122px;
+  opacity: 0;
+  text-align: center;
+  background-color: rgba(247, 247, 247, 0.85);
+  border-left: 1px solid #e2e2e2;
+}
+
+body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover {
+  transition: opacity 200ms ease-in-out;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover {
+  background: rgba(225, 225, 225, 0.85);
+  border: 1px solid black;
+  width: 80px;
+  height: 112px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover.en-context-graphic-hover-solid {
+  background-color: white;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-workchat {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-workchat {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/selected-workchat-fbde777d25.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-workchat {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/selected-workchat@2x-8385627c72.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-workchat {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/selected-workchat-0d39534941.png");
+  }
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-share-text {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-left: 3px;
+  color: #008ae2;
+  vertical-align: middle;
+  line-height: 122px;
+  max-width: 64px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper .en-context-graphic-hover .en-context-share-text {
+  font-size: 12px;
+  color: black;
+  line-height: 114px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-blur {
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover {
+  display: block;
+}
+
+body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover {
+  background: linear-gradient(180deg, #008ae2 0%, #0079c6 100%);
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover {
+  background: rgba(201, 230, 244, 0.9) !important;
+  border: 1px solid #8bcae7 !important;
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover .en-context-workchat {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/workchat-2cb2a2ae02.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover .en-context-workchat {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/workchat@2x-2f533f099e.png");
+  }
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover .en-context-share-text {
+  color: white;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-graphic-clipper:active .en-context-graphic-hover .en-context-share-text {
+  color: black;
+}
+
+body.mac .en-context .en-context-card-holder .en-context-item:hover .en-context-graphic-clipper {
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.en-context .en-context-card-holder .en-context-item:hover .en-context-graphic-clipper .en-context-graphic-blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}
+
+body.win .en-context .en-context-card-holder .en-context-item:hover .en-context-graphic-clipper .en-context-graphic-blur {
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  -o-filter: blur(0px);
+  filter: blur(0px);
+}
+
+.en-context .en-context-card-holder .en-context-item:hover .en-context-graphic-clipper .en-context-graphic-hover {
+  opacity: 1;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item:hover .en-context-graphic-clipper .en-context-graphic-hover {
+  background: rgba(228, 242, 250, 0.9);
+  border: 1px solid #8bcae7;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body {
+  margin: 2px 0px 0px 10px;
+  font-size: 12px;
+  color: #a1a1a1;
+  cursor: pointer;
+  line-height: 18px;
+  max-height: 54px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  width: 169px;
+  white-space: pre-wrap;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-item-body {
+  font-size: 12px;
+  color: #737373;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body.en-context-wide {
+  width: 259px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body.en-context-item-body-one {
+  height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body.en-context-item-body-two {
+  height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body.en-context-body-italics {
+  font-style: italic;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body span.en-context-author {
+  color: #a1a1a1;
+  font-style: italic;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body span.en-context-separator {
+  color: #a1a1a1;
+  font-style: italic;
+  font-style: normal;
+  margin: 0px 3px 0px 5px;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body span.en-context-news-date {
+  color: #a1a1a1;
+  font-style: italic;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-item-body span.en-context-note-date {
+  color: #008ae2;
+  margin-right: 6px;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-item-body span.en-context-note-date {
+  font-size: 12px;
+  color: #8cca6f;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-source {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img {
+  height: 22px;
+  min-width: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.factiva {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/factiva-77b53b2b4f.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.factiva {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/factiva@2x-7598b6e0a0.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.factiva {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/factiva-77b53b2b4f.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.fastcompany {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/fastcompany-df20bd7f4c.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.fastcompany {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/fastcompany@2x-d57d6c2be3.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.fastcompany {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/fastcompany-df20bd7f4c.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.forbes {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/forbes-d4edfe4ce9.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.forbes {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/forbes@2x-bfee5ffb77.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.forbes {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/forbes-d4edfe4ce9.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.inc {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/inc-a7176e7ae2.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.inc {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/inc@2x-8190e76277.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.inc {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/inc-a7176e7ae2.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.itpro {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/itpro-db004a7131.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.itpro {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/itpro@2x-5c95c29652.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.itpro {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/itpro-db004a7131.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.kenplatz {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/kenplatz-6be346bee6.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.kenplatz {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/kenplatz@2x-582eb81af5.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.kenplatz {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/kenplatz-6be346bee6.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.lifehacker {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/lifehacker-657e3c4061.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.lifehacker {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/lifehacker@2x-3f69779e3f.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.lifehacker {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/lifehacker-657e3c4061.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.linkedin {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/linkedin-f528d767cd.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.linkedin {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/linkedin@2x-dbd116c52e.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.linkedin {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/linkedin-f528d767cd.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkei {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkei-78ab6aa149.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkei {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkei@2x-02c309b615.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkei {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkei-78ab6aa149.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkeibp {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkeibp-94f0c0b151.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkeibp {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkeibp@2x-96828097d1.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.nikkeibp {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/nikkeibp-94f0c0b151.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.pandodaily {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/pandodaily-517289b46c.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.pandodaily {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/pandodaily@2x-9cc142a5b7.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.pandodaily {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/pandodaily-517289b46c.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techcrunch {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techcrunch-74e6120feb.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techcrunch {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techcrunch@2x-b6a9179ea0.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techcrunch {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techcrunch-74e6120feb.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techon {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techon-fcf5c4b319.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techon {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techon@2x-ab09ebaef9.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.techon {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/techon-fcf5c4b319.png");
+  }
+}
+
+@media all {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.theverge {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/theverge-fec190367a.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.theverge {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/theverge@2x-384aedbb4b.png");
+  }
+}
+
+@media all {
+  body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.theverge {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/theverge-fec190367a.png");
+  }
+}
+
+@media all {
+  body.mac body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/evernote-business-ee075336bf.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/evernote-business@2x-5512274954.png");
+  }
+}
+
+@media all {
+  body.win body.mac .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/evernote-business-ee075336bf.png");
+  }
+}
+
+@media all {
+  body.mac body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/evernote-business-35efbb2578.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/evernote-business@2x.png");
+  }
+}
+
+@media all {
+  body.win body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.evernote-business {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/evernote-business-35efbb2578.png");
+  }
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.wsj {
+  width: 138px;
+}
+
+@media all {
+  .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.wsj {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/wsj-mast-379b2e6f89.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-img.wsj {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/wsj-mast@2x-8d1eb4a26e.png");
+  }
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-text {
+  cursor: pointer;
+  line-height: 22px;
+  font-size: 11px;
+  vertical-align: middle;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-text {
+  font-size: 11px;
+  color: black;
+}
+
+.en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-text.en-context-source-text-blue {
+  color: #7cbef7;
+  font-size: 12px;
+  font-style: italic;
+  position: relative;
+  top: 1px;
+  left: -4px;
+}
+
+body.win .en-context .en-context-card-holder .en-context-item .en-context-source .en-context-source-text.en-context-source-text-blue {
+  color: black;
+  font-style: normal;
+}
+
+.en-context-upsell {
+  position: relative;
+  margin: 14px;
+  padding: 14px 0px 5px 15px;
+  min-height: 32px;
+}
+
+.en-context-upsell .en-context-upsell-hide-label {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  padding-right: 12px;
+  min-height: 9px;
+  cursor: pointer;
+  background-position: right center;
+  background-size: 7px 9px;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+}
+
+body.win .en-context-upsell .en-context-upsell-hide-label {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  body.mac .en-context-upsell .en-context-upsell-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-up-5778e363f6.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context-upsell .en-context-upsell-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-up@2x-cbf4788469.png");
+  }
+}
+
+@media all {
+  body.win .en-context-upsell .en-context-upsell-hide-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/context-arrow-up-0d80bc86a5.png");
+  }
+}
+
+.en-context-upsell .en-context-upsell-show-label {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+  padding-right: 12px;
+  min-height: 9px;
+  cursor: pointer;
+  background-position: right center;
+  background-size: 7px 9px;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1.5px;
+  color: #54687b;
+  margin-bottom: 8px;
+  text-align: left;
+  text-shadow: #54687b 0.3px 0px;
+}
+
+body.win .en-context-upsell .en-context-upsell-show-label {
+  font-size: 14px;
+  letter-spacing: normal;
+  color: black;
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+@media all {
+  body.mac .en-context-upsell .en-context-upsell-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down-634ec74a23.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context-upsell .en-context-upsell-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-arrow-down@2x-c186c154c0.png");
+  }
+}
+
+@media all {
+  body.win .en-context-upsell .en-context-upsell-show-label {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/win/context-arrow-down-b21d8a570f.png");
+  }
+}
+
+.en-context-upsell .en-context-upsell-body {
+  text-align: center;
+  background-position: center 43px;
+  background-size: 46px 46px;
+  background-repeat: no-repeat;
+}
+
+@media all {
+  body.mac .en-context-upsell .en-context-upsell-body {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-icon-531c9e1ffd.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  body.mac .en-context-upsell .en-context-upsell-body {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-icon@2x-c7cea07d20.png");
+  }
+}
+
+@media all {
+  body.win .en-context-upsell .en-context-upsell-body {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-icon-531c9e1ffd.png");
+  }
+}
+
+.en-context-upsell .en-context-upsell-body .en-context-upsell-headline {
+  padding-top: 104px;
+  font-size: 18px;
+  line-height: 18px;
+  color: #52687b;
+}
+
+body.win .en-context-upsell .en-context-upsell-body .en-context-upsell-headline {
+  font-size: 14px;
+  color: black;
+}
+
+.en-context-upsell .en-context-upsell-body .en-context-upsell-subheadline {
+  padding-top: 8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  color: #717171;
+}
+
+body.win .en-context-upsell .en-context-upsell-body .en-context-upsell-subheadline {
+  font-size: 12px;
+  color: #3b3b3b;
+}
+
+.en-context-upsell .en-context-upsell-body .en-context-upsell-go-premium {
+  padding: 22px 0px 26px 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 12px;
+  color: #2dbe60;
+}
+
+body.win .en-context-upsell .en-context-upsell-body .en-context-upsell-go-premium {
+  font-size: 12px;
+  color: #618cd4;
+  text-decoration: underline;
+}
+
+.en-context-info {
+  max-width: 680px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.en-context-info .en-context-info-logo {
+  width: 42px;
+  height: 26px;
+  background-size: 100%;
+  display: block;
+  margin: 22px auto 0px;
+}
+
+@media all {
+  .en-context-info .en-context-info-logo {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-logo-2694c5f826.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-info .en-context-info-logo {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-logo@2x-b04335e392.png");
+  }
+}
+
+.en-context-info .en-context-info-headline {
+  margin: 10px auto 0px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #696969;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.en-context-info #en-context-info-body {
+  margin: 35px auto;
+  display: block;
+  width: 100%;
+  text-align: justify;
+}
+
+.en-context-info #en-context-info-body .en-context-info-section {
+  display: inline-block;
+  margin: 0px 8px 0px 0px;
+  vertical-align: top;
+  text-align: center;
+  width: 184px;
+}
+
+@media only screen and (max-width: 595px) {
+  .en-context-info #en-context-info-body .en-context-info-section {
+    display: block;
+    margin: 20px auto 0px;
+  }
+
+  .en-context-info #en-context-info-body .en-context-info-section:first-child {
+    margin: 0px auto;
+  }
+}
+
+.en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image {
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  margin: 0px auto;
+}
+
+@media all {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.note {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-note-75ed6aed25.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.note {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-note@2x-3e3506cf14.png");
+  }
+}
+
+@media all {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.article {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-article-99bc094fe0.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.article {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-article@2x-0ada5226e1.png");
+  }
+}
+
+@media all {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.person {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-person-00ba7c42d6.png");
+  }
+}
+
+@media all and (-moz-min-device-pixel-ratio: 1.5), all and (-webkit-min-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 1.5dppx) {
+  .en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-image.person {
+    background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/context/context-info-person@2x-86de18b7e6.png");
+  }
+}
+
+.en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-title {
+  font-size: 12px;
+  line-height: 12px;
+  color: #696969;
+  font-weight: bold;
+  margin: 10px 0px 0px 0px;
+}
+
+.en-context-info #en-context-info-body .en-context-info-section .en-context-info-section-text {
+  font-size: 12px;
+  line-height: 15px;
+  color: #696969;
+  margin: 10px 0px 0px 0px;
+}
+
+.en-context-info #en-context-info-body .en-context-info-stretcher {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.en-context-info .en-context-info-button {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+body.mac .en-context-info .en-context-info-button {
+  border-radius: 6px;
+  padding: 9px 15px;
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+  background-color: #04b5ff;
+  background-image: linear-gradient(top, #00bfff, #09a5ff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00bfff', endColorstr='#ff09a5ff', GradientType=0);
+}
+
+body.win .en-context-info .en-context-info-button {
+  background-color: #2580dc;
+  border: 1px solid #216dbb;
+  line-height: 28px;
+  padding: 0px 12px;
+}
+
+body.win .en-context-info .en-context-info-button:hover {
+  background-color: #2377ce;
+  border-color: #1e5d9c;
+}
+
+body.mac .en-context-info .en-context-info-button:active {
+  background-color: #05afff;
+  background-image: linear-gradient(top, #09a5ff, #00bfff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff09a5ff', endColorstr='#ff00bfff', GradientType=0);
+}
+
+body.win .en-context-info .en-context-info-button:active {
+  background-color: #2369b4;
+  border-color: #1e5a97;
+}
+
+body[theme="dark"] .en-context {
+  background: transparent;
+  border-color: transparent;
+}
+
+html.en-dragdrop-dragging {
+  cursor: move !important;
+  /* fallback if grab cursor is unsupported */
+  cursor: grabbing !important;
+  cursor: -webkit-grabbing !important;
+}
+
+html.en-dragdrop-willdrag,
+html.en-dragdrop-willdrag a {
+  cursor: move !important;
+  /* fallback if grab cursor is unsupported */
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+}
+
+html.en-dragdrop-prevent {
+  /* fallback if grab cursor is unsupported */
+  cursor: no-drop !important;
+  cursor: -moz-no-drop !important;
+  cursor: -webkit-no-drop !important;
+}
+
+en-note .en-dragdrop-dragged {
+  opacity: 0.5;
+}
+
+en-tools .en-drop-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: #0081C2;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 99;
+}
+
+en-tools .en-drop-line.en-drop-line-animate {
+  transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+  -webkit-transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+  transition-timing-function: ease, ease, ease, ease;
+}
+
+en-tools .en-drop-line.en-drop-indentedline .en-drop-linebreak {
+  height: 2px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  pointer-events: none;
+  background: #00a3f5;
+  transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  transition-timing-function: ease;
+  z-index: 1;
+}
+
+en-tools .en-drop-line.en-drop-indentedline .en-drop-linenotch {
+  height: 2px;
+  width: 5px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  pointer-events: none;
+  background: #fff;
+  display: none;
+  transition: left 0.3s;
+  -webkit-transition: left 0.3s;
+  transition-timing-function: ease;
+  z-index: 1;
+}
+
+en-tools .en-drop-line.en-drop-indentedline .en-drop-linelevel {
+  height: 8px;
+  width: 8px;
+  pointer-events: none;
+  border-radius: 100%;
+  position: absolute;
+  top: -3px;
+  left: 0px;
+  background: #0081C2;
+  transition: left 0.3s;
+  -webkit-transition: left 0.3s;
+  transition-timing-function: ease;
+  z-index: 2;
+}
+
+en-tools .en-drop-line.en-drop-indentedline-left .en-drop-linelevel {
+  left: 0px;
+}
+
+en-tools .en-drop-line.en-drop-indentedline-right .en-drop-linebreak {
+  width: 37px;
+}
+
+en-tools .en-drop-line.en-drop-indentedline-right .en-drop-linenotch {
+  display: block;
+  left: 37px;
+}
+
+en-tools .en-drop-line.en-drop-indentedline-right .en-drop-linelevel {
+  left: 42px;
+}
+
+en-tools .en-dragdrop-ghost {
+  position: absolute;
+  z-index: 99;
+  margin: auto;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(51, 51, 51, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(197, 197, 197, 0.5);
+  border-radius: 4px;
+  opacity: 1;
+}
+
+en-tools .en-dragdrop-ghost.en-dragdrop-ghost-hint {
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  -webkit-transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  transition-timing-function: ease, ease, ease, ease;
+}
+
+en-tools .en-dragdrop-ghost.en-dragdrop-ghost-moving {
+  transition: width 0.3s, height 0.3s;
+  -webkit-transition: width 0.3s, height 0.3s, top 0s, left 0s;
+  transition-timing-function: ease, ease;
+}
+
+en-tools .en-dragdrop-ghost.en-dragdrop-ghost-dropping {
+  transition: width 0.3s, height 0.3s, opacity 0.4s;
+  -webkit-transition: width 0.3s, height 0.3s, top 0.4s, left 0.4s, opacity 0.4s;
+  transition-timing-function: ease, ease, ease, ease, ease-in;
+}
+
+en-tools .en-dragdrop-list-ghost {
+  width: 200px;
+  overflow: hidden;
+  padding: 2px;
+  color: #333;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  white-space: pre;
+  padding: 8px;
+}
+
+en-tools .en-dragdrop-list-ghost div {
+  padding: 2px 0;
+}
+
+en-tools .en-dragdrop-listitem-ghost {
+  max-width: 200px;
+  min-width: 80px;
+  height: 25px !important;
+  padding: 2px 6px;
+  color: #333;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+en-tools .en-dragdrop-todoitem-ghost {
+  max-width: 230px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+  padding: 2px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+en-tools .en-dragdrop-table-ghost {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(220, 243, 255, 0.8);
+  border-radius: 0 0 4px 0;
+}
+
+en-tools .en-dragdrop-table-ghost .ghost-row {
+  position: relative;
+  height: 25px;
+}
+
+en-tools .en-dragdrop-table-ghost .ghost-row:first-child {
+  border-bottom: 1px solid rgba(0, 129, 194, 0.3);
+}
+
+en-tools .en-dragdrop-table-ghost .ghost-row:first-child::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 7px;
+  background: rgba(0, 129, 194, 0.3);
+  border-radius: 4px 4px 0 0;
+}
+
+en-tools .en-dragdrop-table-ghost .ghost-row .ghost-cell {
+  width: 50%;
+  height: 25px;
+  display: inline-block;
+}
+
+en-tools .en-dragdrop-table-ghost .ghost-row .ghost-cell:first-child {
+  border-right: 1px solid rgba(0, 129, 194, 0.3);
+}
+
+en-tools .en-dragdrop-table-ghost .first-ghost-cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -7px;
+  display: block;
+  width: 7px;
+  height: 50px;
+  background: rgba(0, 129, 194, 0.3);
+  border-radius: 4px 0 0 4px;
+}
+
+magic-drawing .drawingCanvas path {
+  fill: none;
+  stroke: #00A82D;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+magic-drawing .drawingCanvas {
+  height: 100%;
+  width: 100%;
+  cursor: default;
+  padding: 1px;
+  border: 1px solid #00751f;
+}
+
+magic-drawing .clearDrawingButton {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+magic-drawing {
+  position: relative;
+  display: block;
+  overflow: auto;
+  resize: both;
+  height: 300px;
+  width: 300px;
+}
+
+en-table {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  margin: 26px 0 20px 0;
+}
+
+en-table::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+en-table[data-lazy="1"]::before {
+  border-width: 0px;
+}
+
+en-table::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -34px;
+  left: -34px;
+  right: -13px;
+  bottom: -20px;
+  z-index: 1;
+}
+
+en-table.multirange::selection,
+en-table.selected::selection,
+en-table.multirange *::selection,
+en-table.selected *::selection {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+en-table.selected::before {
+  border: 2px solid #0081C2;
+  z-index: 1;
+}
+
+en-table.selected td::after {
+  z-index: 50;
+}
+
+en-table.selected en-adornments {
+  display: none;
+}
+
+en-table.selected td,
+en-table td.selected {
+  border-color: #cdd8d2;
+  position: relative;
+}
+
+en-table.selected td::after,
+en-table td.selected::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background-color: rgba(0, 129, 194, 0.1);
+  border: 1px solid #0081C2;
+  pointer-events: none;
+}
+
+en-table.selected td img,
+en-table td.selected img {
+  pointer-events: none;
+}
+
+en-table.selected tr td:last-child,
+en-table tr td:last-child.selected {
+  border-right: none;
+}
+
+en-table.selected tr td:last-child::after,
+en-table tr td:last-child.selected::after {
+  right: 0;
+}
+
+en-table en-adornments .handles-container {
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+}
+
+en-table en-adornments .handles-container .handles,
+en-table en-adornments .handles-container .handle {
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
+en-table en-adornments .handles-container .handles {
+  z-index: 2;
+}
+
+en-table en-adornments .handles-container .handle {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+en-table en-adornments .handles-container .handle::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-color: #f6f6f6;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-color: #eee;
+  border-width: 1px;
+}
+
+en-table en-adornments .handles-container .handle:hover {
+  z-index: 2;
+}
+
+en-table en-adornments .handles-container .handle:hover::after {
+  background-color: #ebebeb;
+  border-color: #d8d8d8;
+}
+
+en-table en-adornments .handles-container .handle.selected {
+  z-index: 3;
+}
+
+en-table en-adornments .handles-container .handle.selected::after {
+  background-color: rgba(0, 129, 194, 0.3);
+  border-color: rgba(0, 129, 194, 0.3);
+}
+
+en-table en-adornments .handles-container .handle.wselected {
+  z-index: 4;
+}
+
+en-table en-adornments .handles-container .handle.wselected::after {
+  background-color: rgba(0, 129, 194, 0.3);
+  border-color: rgba(0, 129, 194, 0.3);
+}
+
+en-table en-adornments .handles-container .handle.selected:hover,
+en-table en-adornments .handles-container .handle.wselected:hover {
+  z-index: 5;
+}
+
+en-table en-adornments .handles-container .handle.selected:hover::after,
+en-table en-adornments .handles-container .handle.wselected:hover::after {
+  background-color: rgba(0, 129, 194, 0.6);
+  border-color: rgba(0, 129, 194, 0.6);
+}
+
+en-table en-adornments .handles-container .handle.draggable {
+  cursor: -webkit-grab;
+}
+
+en-table en-adornments .insertions-container {
+  position: absolute;
+  z-index: 12;
+}
+
+en-table en-adornments .insertions-container .insertions {
+  width: inherit;
+  height: inherit;
+}
+
+en-table en-adornments .insertion {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 11;
+}
+
+en-table en-adornments .insertion::before,
+en-table en-adornments .insertion::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  z-index: 1;
+}
+
+body:not(.win) en-table en-adornments .insertion::before,
+body:not(.win) en-table en-adornments .insertion::after {
+  transition: opacity 100ms ease-out;
+}
+
+en-table en-adornments .insertion::before {
+  top: 9px;
+  left: 3px;
+  width: 10px;
+  height: 2px;
+}
+
+en-table en-adornments .insertion::after {
+  top: 5px;
+  left: 7px;
+  width: 2px;
+  height: 10px;
+}
+
+en-table en-adornments .insertion .insertion-shape {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: calc(50% - 13px);
+  left: calc(50% - 14px);
+  border-radius: 13px 13px 13px 13px;
+  background-color: #d8d8d8;
+  -webkit-transform: scale(0.23, 0.23) rotate(45deg);
+  transform: scale(0.23, 0.23) rotate(45deg);
+  pointer-events: none;
+}
+
+body:not(.win) en-table en-adornments .insertion .insertion-shape {
+  transition: border-radius 150ms ease-out, background-color 150ms ease-out, -webkit-transform 150ms ease-out;
+  transition: border-radius 150ms ease-out, background-color 150ms ease-out, transform 150ms ease-out;
+  transition: border-radius 150ms ease-out, background-color 150ms ease-out, transform 150ms ease-out, -webkit-transform 150ms ease-out;
+}
+
+en-table en-adornments .insertion:hover {
+  z-index: 13;
+}
+
+en-table en-adornments .insertion:hover::before,
+en-table en-adornments .insertion:hover::after {
+  opacity: 1;
+}
+
+body:not(.win) en-table en-adornments .insertion:hover::before,
+body:not(.win) en-table en-adornments .insertion:hover::after {
+  transition-delay: 50ms;
+}
+
+en-table en-adornments .insertion:hover .insertion-shape {
+  border-radius: 13px 13px 4px 13px;
+  background-color: #0081C2;
+  -webkit-transform: scale(1, 1) rotate(45deg);
+  transform: scale(1, 1) rotate(45deg);
+}
+
+en-table en-adornments .columns {
+  position: absolute;
+  left: -13px;
+  right: -13px;
+  top: -34px;
+  height: 35px;
+  overflow: hidden;
+  display: none;
+}
+
+en-table en-adornments .columns > .insertion {
+  position: absolute;
+  bottom: 13px;
+  left: 6px;
+}
+
+en-table en-adornments .columns .insertion {
+  display: inline-block;
+}
+
+en-table en-adornments .columns .insertions-container {
+  bottom: 13px;
+  left: 22px;
+  right: 0;
+  height: 18px;
+}
+
+en-table en-adornments .columns .handles-container {
+  height: 12px;
+  bottom: 1px;
+  left: 13px;
+  right: 13px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+en-table en-adornments .columns .handles-container .handle {
+  float: left;
+  height: 12px;
+}
+
+en-table en-adornments .columns .handles-container .handle::after {
+  border-right-style: solid;
+}
+
+en-table en-adornments .columns .handles-container .handle:last-child::after {
+  border-right: none;
+}
+
+en-table en-adornments .columns .handles-container .handle.selected::after,
+en-table en-adornments .columns .handles-container .handle.wselected::after,
+en-table en-adornments .columns .handles-container .handle:hover::after {
+  border-left-style: solid;
+  left: -1px;
+}
+
+en-table en-adornments .rows {
+  position: absolute;
+  top: -13px;
+  bottom: -13px;
+  left: -34px;
+  width: 35px;
+  overflow: hidden;
+  display: none;
+}
+
+en-table en-adornments .rows > .insertion {
+  position: absolute;
+  top: 6px;
+  right: 13px;
+}
+
+en-table en-adornments .rows .insertion::before {
+  top: 7px;
+  left: 4px;
+}
+
+en-table en-adornments .rows .insertion::after {
+  top: 3px;
+  left: 8px;
+}
+
+en-table en-adornments .rows .insertion:hover .insertion-shape {
+  border-radius: 13px 4px 13px 13px;
+}
+
+en-table en-adornments .rows .insertion .insertion-shape {
+  top: calc(50% - 14px);
+  left: calc(50% - 13px);
+}
+
+en-table en-adornments .rows .insertions-container {
+  top: 22px;
+  bottom: 0;
+  width: 18px;
+  right: 13px;
+}
+
+en-table en-adornments .rows .handles-container {
+  width: 12px;
+  top: 13px;
+  bottom: 13px;
+  right: 1px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+en-table en-adornments .rows .handles-container .handle {
+  width: 12px;
+}
+
+en-table en-adornments .rows .handles-container .handle::after {
+  border-bottom-style: solid;
+}
+
+en-table en-adornments .rows .handles-container .handle:last-child::after {
+  border-bottom: none;
+}
+
+en-table en-adornments .rows .handles-container .handle.selected::after,
+en-table en-adornments .rows .handles-container .handle.wselected::after,
+en-table en-adornments .rows .handles-container .handle:hover::after {
+  border-top-style: solid;
+  top: -1px;
+}
+
+en-table en-adornments .content-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: 9;
+}
+
+en-table en-adornments .content-container .content {
+  width: 100%;
+  height: 100%;
+}
+
+en-table en-adornments .content-container .xline,
+en-table en-adornments .content-container .yline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+body:not(.win) en-table en-adornments .content-container .xline,
+body:not(.win) en-table en-adornments .content-container .yline {
+  transition: opacity 150ms ease-out;
+}
+
+en-table en-adornments .content-container .xline::before,
+en-table en-adornments .content-container .yline::before {
+  height: inherit;
+  width: inherit;
+  background-color: #0081C2;
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  content: '';
+}
+
+en-table en-adornments .content-container .xline {
+  height: 14px;
+}
+
+en-table en-adornments .content-container .xline::before {
+  height: 2px;
+  top: 5px;
+}
+
+en-table en-adornments .content-container .yline {
+  width: 14px;
+  cursor: col-resize;
+}
+
+en-table en-adornments .content-container .yline::before {
+  width: 2px;
+  left: 5px;
+}
+
+en-table en-adornments .content-container .yline.active {
+  opacity: 1;
+}
+
+en-table en-adornments .content-container .lscroll,
+en-table en-adornments .content-container .rscroll {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  opacity: 0;
+  background-size: 6px 1px;
+  background-repeat: repeat-y;
+  background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAACCAQAAADGdvUcAAAAIElEQVQIW2M885+BwUSK4S8Q/kPCfxnBEpJgLlgARgIAFAgWBWc78SwAAAAASUVORK5CYII=");
+}
+
+en-table en-adornments .content-container .rscroll {
+  left: initial;
+  right: 0;
+  background-image: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAACCAQAAADGdvUcAAAAHklEQVQIW2NkYAJDZjAGQSDvzHMGBkYghAnCFYAkADuoA5lo1SDVAAAAAElFTkSuQmCC");
+}
+
+en-table en-adornments .scrollbar {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: all;
+  display: none;
+  z-index: 9;
+}
+
+body.ios en-table en-adornments .scrollbar,
+body.android en-table en-adornments .scrollbar {
+  display: none !important;
+}
+
+en-table en-adornments .scrollbar .scrollbar-thumb {
+  width: 60px;
+  position: absolute;
+  top: 0;
+  height: inherit;
+}
+
+en-table en-adornments .scrollbar .scrollbar-thumb::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  height: 4px;
+  width: inherit;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: height 180ms ease-out, background-color 180ms ease-out;
+}
+
+en-table en-adornments .scrollbar .scrollbar-thumb:hover::after,
+en-table en-adornments .scrollbar .scrollbar-thumb.active::after {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 8px;
+}
+
+body.win en-table en-adornments .scrollbar .scrollbar-thumb::after,
+body.win en-table en-adornments .scrollbar .scrollbar-thumb:hover::after,
+body.win en-table en-adornments .scrollbar .scrollbar-thumb.active::after {
+  transition: none;
+  background-color: #d7d7d7;
+  border-radius: 0;
+  height: 8px;
+}
+
+en-table en-adornments .en-cell-btn {
+  width: 18px;
+  height: 18px;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu@2x-921d26eeba.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  pointer-events: all;
+  z-index: 2;
+  cursor: pointer;
+  display: none;
+}
+
+en-table en-adornments .en-cell-btn:hover {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/table/table_menu_hover@2x-3c09caeb93.png");
+}
+
+en-table en-adornments .en-table-btn {
+  position: absolute;
+  z-index: 2;
+  top: -26px;
+  left: -26px;
+  width: 20px;
+  height: 20px;
+  pointer-events: all;
+  cursor: pointer;
+  display: none;
+  border-radius: 50%;
+  background-color: #dadada;
+}
+
+en-table en-adornments .en-table-btn:hover {
+  background-color: #0081C2;
+}
+
+en-table en-adornments .en-table-btn::before,
+en-table en-adornments .en-table-btn::after {
+  position: absolute;
+  content: '';
+  top: 7px;
+  left: 6px;
+  width: 8px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+en-table en-adornments .en-table-btn::after {
+  top: 11px;
+}
+
+en-table.active::after {
+  display: block;
+}
+
+en-table.active en-adornments .en-cell-btn,
+en-table.active en-adornments .en-table-btn,
+en-table.active en-adornments .columns,
+en-table.active en-adornments .rows {
+  display: block;
+}
+
+body.ios en-table.active en-adornments .en-cell-btn,
+body.ios en-table.active en-adornments .en-table-btn,
+body.ios en-table.active en-adornments .columns,
+body.ios en-table.active en-adornments .rows,
+body.android en-table.active en-adornments .en-cell-btn,
+body.android en-table.active en-adornments .en-table-btn,
+body.android en-table.active en-adornments .columns,
+body.android en-table.active en-adornments .rows {
+  display: none;
+}
+
+en-table.selecting en-adornments img,
+en-table.selecting en-adornments .handle,
+en-table.selecting en-adornments .insertion,
+en-table.selecting en-adornments .yline,
+en-table.selecting en-adornments .scrollbar,
+en-table.selecting en-adornments .en-cell-btn,
+en-table.selecting en-adornments .en-table-btn,
+en-table.selecting en-adornments .en-imageresizer-trigger {
+  pointer-events: none !important;
+}
+
+en-table.yline-visible:hover .content-container .yline,
+en-table.xline-visible:hover .content-container .xline {
+  opacity: 1;
+}
+
+html.table-dragging en-table.yline-visible .content-container .yline,
+html.table-dragging en-table.xline-visible .content-container .xline {
+  opacity: 1;
+}
+
+en-table.yline-visible:hover .content-container .yline {
+  pointer-events: all;
+}
+
+en-table .container {
+  overflow: hidden;
+  width: inherit;
+  max-width: inherit;
+  position: relative;
+  z-index: 2;
+}
+
+body.ios en-table .container,
+body.android en-table .container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+en-table cursor-proxy {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  font-size: 0px;
+}
+
+en-table table {
+  display: block;
+  border-collapse: initial;
+  border-spacing: 0;
+  table-layout: fixed;
+  border: none;
+  max-width: none;
+}
+
+en-table table tr {
+  vertical-align: top;
+}
+
+en-table table td {
+  border: 1px solid #ccc;
+  min-width: 31px;
+  margin: 0;
+  padding: 8px;
+  box-sizing: content-box;
+}
+
+en-table table td img.en-media-file {
+  height: auto;
+}
+
+en-table table tr td:not(:first-child) {
+  border-left: none;
+}
+
+en-table table tr:not(:first-child) td {
+  border-top: none;
+}
+
+.en-measure-table {
+  border-collapse: initial;
+  border-spacing: 0;
+  table-layout: fixed;
+  visibility: hidden;
+  position: absolute;
+}
+
+.en-measure-table td {
+  min-width: 48px;
+  margin: 0;
+  padding: 8px;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.en-drag-colrow {
+  position: absolute;
+  background-color: rgba(220, 243, 255, 0.8);
+  border: 1px solid rgba(0, 129, 194, 0.6);
+  box-shadow: 0 2px 4px 0 rgba(197, 197, 197, 0.5);
+  z-index: 2147481447;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  transition: opacity 150ms ease-in, -webkit-transform 150ms ease-in;
+  transition: opacity 150ms ease-in, transform 150ms ease-in;
+  transition: opacity 150ms ease-in, transform 150ms ease-in, -webkit-transform 150ms ease-in;
+  pointer-events: none;
+}
+
+.en-drag-colrow::after {
+  content: attr(data-count);
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  right: -6px;
+  line-height: 20px;
+  height: 20px;
+  min-width: 10px;
+  padding: 0 5px;
+  background-color: #0081C2;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial;
+  color: #fff;
+  text-align: center;
+  opacity: inherit;
+  transition: opacity 80ms ease-out 30ms;
+}
+
+#en-note .google-drive-menu-hover {
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/richlink-google-menu-hover-d244c85547.png");
+}
+
+#en-note .google-drive-minimal-title {
+  position: relative;
+  margin-left: 24px;
+}
+
+#en-note .google-drive-minimal-title.en-richlink {
+  background: none;
+  border: none;
+}
+
+#en-note .google-drive-minimal-title.google-drive-menu-hover {
+  background: none;
+  border: none;
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-unknown::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-unknown-90dd142da4.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-generic::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-generic-958087492c.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-gdocs::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gdocs_40-2c8775ec17.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-gsheets::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gsheets_40-b8dd80fee5.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-gslides::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/att_icon_gslides_40-c8a92171b0.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-3d::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-3d-ee0045630c.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-after_affects::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-after_affects-c66443052a.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-animate::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-animate-95543417ef.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-audio::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-audio-00ae24ab40.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-dream_weaver::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-dream_weaver-3b3d34c106.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-editing::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-editing-a7b1fc1ad3.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-evernote::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-evernote-8d1424be53.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-excel::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-excel-6f7eea4158.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-flash_builder::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-flash_builder-79ceb55cc1.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-font::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-font-cd91ff6cfb.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-illustrator::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-illustrator-096a737f14.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-image::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-image-af3e82b638.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-keynote::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-keynote-30070d0ba1.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-link::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-link-6178475fbe.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-maps::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-maps-c0bbffb7e7.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-numbers::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-numbers-7a829ade0d.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-pages::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-pages-bb25aae984.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-pdf::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-pdf-50361f10ac.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-photoshop::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-photoshop-1cf0b8fb76.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-ppt::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-ppt-e4a3a63084.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-premier::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-premier-9df490dc96.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-svg::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-svg-b0fa62c752.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-video::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-video-2ea669bc72.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-word::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-word-56de70094b.svg");
+}
+
+#en-note .google-drive-minimal-title.en-attach-icon-zip::before {
+  background-image: url("https://cdn1.evernote.com/ion/dist/ce/images/en-attach-icon-zip-c61585cdec.svg");
+}
+
+#en-note .google-drive-minimal-title::before {
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: ' ';
+}
+
+#en-note div.google-drive-container {
+  box-sizing: null;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 0;
+  position: relative;
+}
+
+#en-note div.google-drive-icon {
+  vertical-align: middle;
+}
+
+#en-note div.google-drive-middle-text {
+  box-sizing: null;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 0;
+  flex: 1 auto;
+  -webkit-flex: 1 auto;
+}
+
+#en-note div.google-drive-line1-text {
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto-Medium', sans-serif;
+  color: #2e2e2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+#en-note div.google-drive-line1-text .en-richlink-disabled-state {
+  color: #999999;
+  font-style: italic;
+}
+
+#en-note div.google-drive-line2-text {
+  min-width: 0;
+  font-size: 10px;
+  line-height: 16px;
+  color: #727272;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+#en-note div.google-drive-thumbnail-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: -4px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  position: relative;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+#en-note img.google-drive-thumbnail {
+  width: 100%;
+  display: block;
+}
+
+#en-note span.google-drive-thumbnail-failed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1em;
+  margin: auto;
+  font-size: 50px;
+}
+
+#en-note img.google-drive-share-icon {
+  width: 11px;
+  height: 7px;
+  margin-right: 8px;
+  display: none;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#en-note span.en-connect-to-drive-text {
+  font-size: 12px;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: underline;
+  color: #37adfc;
+}
+
+en-tools div.realtime-selections {
+  z-index: 2147479647;
+}
+
+en-tools div.realtime-selections .rte-selection {
+  position: absolute;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+en-tools div.realtime-selections .rte-cursor::before {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: inherit;
+  -webkit-transform: scale(0.04);
+  transform: scale(0.04);
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  left: -49px;
+  top: -48px;
+}
+
+en-tools div.realtime-selections .rte-cursor div.name-area {
+  position: absolute;
+  top: -12px;
+  left: -1px;
+  padding: 2px 4px;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 13px;
+  max-width: 100px;
+  border-radius: 2px;
+  color: white;
+  overflow: hidden;
+  -webkit-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  opacity: 0;
+  transition: opacity cubic-bezier(0, 0.54, 0.52, 0.96) 0.5s;
+}
+
+en-tools div.realtime-selections .rte-cursor:hover div.name-area {
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+en-comment {
+  display: inline;
+}
+
+en-templatemanager .emptyillustration {
+  display: block;
+  width: 299px;
+  height: 110px;
+  margin-bottom: 64px;
+  background: url("https://cdn1.evernote.com/ion/dist/ce/images/templates-empty-illustration-16fa7e91d0.svg");
+}

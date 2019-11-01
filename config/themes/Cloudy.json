@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Cloudy.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0e1126",
+        "foreground": "#89d0de",
+        "cursor": "#89d0de"
+    },
+    "colors": {
+        "color0": "#0e1126",
+        "color1": "#9A3057",
+        "color2": "#C83752",
+        "color3": "#06608F",
+        "color4": "#026B95",
+        "color5": "#4A5F94",
+        "color6": "#05A9CD",
+        "color7": "#89d0de",
+        "color8": "#5f919b",
+        "color9": "#9A3057",
+        "color10": "#C83752",
+        "color11": "#06608F",
+        "color12": "#026B95",
+        "color13": "#4A5F94",
+        "color14": "#05A9CD",
+        "color15": "#89d0de"
+    }
+}

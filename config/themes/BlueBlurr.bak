@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/github/rice/bg/BlueBlurr.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0f1228",
+        "foreground": "#a0afba",
+        "cursor": "#a0afba"
+    },
+    "colors": {
+        "color0": "#0f1228",
+        "color1": "#224E66",
+        "color2": "#2E536D",
+        "color3": "#595D65",
+        "color4": "#897562",
+        "color5": "#C6A66A",
+        "color6": "#236A84",
+        "color7": "#a0afba",
+        "color8": "#707a82",
+        "color9": "#224E66",
+        "color10": "#2E536D",
+        "color11": "#595D65",
+        "color12": "#897562",
+        "color13": "#C6A66A",
+        "color14": "#236A84",
+        "color15": "#a0afba"
+    }
+}

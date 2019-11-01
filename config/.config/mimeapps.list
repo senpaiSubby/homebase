@@ -1,0 +1,45 @@
+[Default Applications]
+text/plain=code.desktop
+application/zip=xarchiver.desktop
+application/x-matroska=mpv.desktop
+inode/directory=pcmanfm.desktop
+application/x-directory=pcmanfm.desktop
+image/jpeg=sxiv.desktop
+image/png=sxiv.desktop
+image/gif=sxiv.desktop
+text/markdown=code.desktop
+x-scheme-handler/http=firefox-developer-edition.desktop
+x-scheme-handler/https=firefox-developer-edition.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=userapp-urxvt -e sc-im-YJ9LLZ.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+video/x-matroska=mpv.desktop
+x-scheme-handler/mailspring=mailspring.desktop
+x-scheme-handler/ftp=firefox-developer-edition.desktop
+x-scheme-handler/chrome=firefox-developer-edition.desktop
+text/html=firefox-developer-edition.desktop
+application/x-extension-htm=firefox-developer-edition.desktop
+application/x-extension-html=firefox-developer-edition.desktop
+application/x-extension-shtml=firefox-developer-edition.desktop
+application/xhtml+xml=firefox-developer-edition.desktop
+application/x-extension-xhtml=firefox-developer-edition.desktop
+application/x-extension-xht=firefox-developer-edition.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/mailto=chromium.desktop
+
+[Added Associations]
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=userapp-urxvt -e sc-im-YJ9LLZ.desktop;
+text/plain=code.desktop;
+inode/directory=exo-file-manager.desktop
+x-scheme-handler/trash=exo-file-manager.desktop
+video/x-matroska=mpv.desktop;
+x-scheme-handler/http=firefox-developer-edition.desktop;
+x-scheme-handler/https=firefox-developer-edition.desktop;
+x-scheme-handler/ftp=firefox-developer-edition.desktop;
+x-scheme-handler/chrome=firefox-developer-edition.desktop;
+text/html=chromium.desktop;firefox-developer-edition.desktop;
+application/x-extension-htm=firefox-developer-edition.desktop;
+application/x-extension-html=firefox-developer-edition.desktop;
+application/x-extension-shtml=firefox-developer-edition.desktop;
+application/xhtml+xml=firefox-developer-edition.desktop;
+application/x-extension-xhtml=firefox-developer-edition.desktop;
+application/x-extension-xht=firefox-developer-edition.desktop;

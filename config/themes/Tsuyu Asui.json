@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Tsuyu Asui.png",
+    "alpha": "100",
+    "special": {
+        "background": "#2c1c2d",
+        "foreground": "#e1d5d7",
+        "cursor": "#e1d5d7"
+    },
+    "colors": {
+        "color0": "#2c1c2d",
+        "color1": "#9B858D",
+        "color2": "#B0999B",
+        "color3": "#B79DA5",
+        "color4": "#C29A9D",
+        "color5": "#CBB6B4",
+        "color6": "#D1C3BE",
+        "color7": "#e1d5d7",
+        "color8": "#9d9596",
+        "color9": "#9B858D",
+        "color10": "#B0999B",
+        "color11": "#B79DA5",
+        "color12": "#C29A9D",
+        "color13": "#CBB6B4",
+        "color14": "#D1C3BE",
+        "color15": "#e1d5d7"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Restaurant.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#081929",
+        "foreground": "#97c2d5",
+        "cursor": "#97c2d5"
+    },
+    "colors": {
+        "color0": "#081929",
+        "color1": "#585E6A",
+        "color2": "#BB363E",
+        "color3": "#9F906D",
+        "color4": "#146595",
+        "color5": "#035BA1",
+        "color6": "#5C758C",
+        "color7": "#97c2d5",
+        "color8": "#698795",
+        "color9": "#585E6A",
+        "color10": "#BB363E",
+        "color11": "#9F906D",
+        "color12": "#146595",
+        "color13": "#035BA1",
+        "color14": "#5C758C",
+        "color15": "#97c2d5"
+    }
+}

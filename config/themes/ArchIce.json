@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/ArchIce.png",
+    "alpha": "100",
+    "special": {
+        "background": "#173c52",
+        "foreground": "#d5d8da",
+        "cursor": "#d5d8da"
+    },
+    "colors": {
+        "color0": "#173c52",
+        "color1": "#758792",
+        "color2": "#7391A3",
+        "color3": "#8998A1",
+        "color4": "#9AA9B1",
+        "color5": "#AAB4BA",
+        "color6": "#B3BCC1",
+        "color7": "#d5d8da",
+        "color8": "#959798",
+        "color9": "#758792",
+        "color10": "#7391A3",
+        "color11": "#8998A1",
+        "color12": "#9AA9B1",
+        "color13": "#AAB4BA",
+        "color14": "#B3BCC1",
+        "color15": "#d5d8da"
+    }
+}

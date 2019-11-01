@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Turtle.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0F1316",
+        "foreground": "#b7b8b5",
+        "cursor": "#b7b8b5"
+    },
+    "colors": {
+        "color0": "#0F1316",
+        "color1": "#2D3F60",
+        "color2": "#344557",
+        "color3": "#394F6C",
+        "color4": "#455974",
+        "color5": "#5C6166",
+        "color6": "#506378",
+        "color7": "#b7b8b5",
+        "color8": "#80807e",
+        "color9": "#2D3F60",
+        "color10": "#344557",
+        "color11": "#394F6C",
+        "color12": "#455974",
+        "color13": "#5C6166",
+        "color14": "#506378",
+        "color15": "#b7b8b5"
+    }
+}

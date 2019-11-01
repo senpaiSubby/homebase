@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Alone.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#261c2f",
+        "foreground": "#9c95ba",
+        "cursor": "#9c95ba"
+    },
+    "colors": {
+        "color0": "#261c2f",
+        "color1": "#D25051",
+        "color2": "#EA5255",
+        "color3": "#D76457",
+        "color4": "#F66F56",
+        "color5": "#CC5A62",
+        "color6": "#FF815F",
+        "color7": "#9c95ba",
+        "color8": "#6d6882",
+        "color9": "#D25051",
+        "color10": "#EA5255",
+        "color11": "#D76457",
+        "color12": "#F66F56",
+        "color13": "#CC5A62",
+        "color14": "#FF815F",
+        "color15": "#9c95ba"
+    }
+}

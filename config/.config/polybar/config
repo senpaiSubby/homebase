@@ -1,0 +1,571 @@
+# _____  _              _       _____       _    _  _
+#|   __||_| _____  ___ | | _ _ |   __| _ _ | |_ | ||_| _____  ___
+#|__   || ||     || . || || | ||__   || | || . || || ||     || -_|
+#|_____||_||_|_|_||  _||_||_  ||_____||___||___||_||_||_|_|_||___|
+#
+;----------------
+; General
+;----------------
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[colors]
+
+background = #282828
+background_alt = #282828
+foreground = #ebdbb2
+foreground-alt = #ebdbb2
+primary = #8ec07c
+secondary = #fabd2f
+alert = #fb4934
+
+red = #fb4934
+orange = #fabd2f
+yellow = #fabd2f
+green = #8ec07c
+aqua = #8ec07c
+blue = #83a598
+purple = #d3869b}
+
+
+[bar/base]
+width = 100%
+height = 30
+fixed-center = true
+
+#monitor = DP1
+monitor = HDMI1
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+separator = " | "
+
+;colors
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = #f00
+
+;font
+dpi = ${xrdb:Xft.dpi:-1}
+line-size = 2
+font-0 = Fira\ Code:pixelsize=14:weight=medium;3
+font-1 = Ionicons:pixelsize=16;4
+font-2 = Material Icons:pixelsize=14;3
+
+;cursor
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;wm
+wm-restack = bspwm
+
+[bar/top]
+inherit = bar/base
+
+;tray
+tray-position = right
+tray-padding = 2
+
+;modules
+modules-left = bspwm
+modules-center = date
+modules-right = battery2 battery1 backlight volume eth eth2 wlan wlan2
+
+border-size = 0
+border-color =
+;border-color = ${xrdb:color2:#222}
+
+
+[bar/bottom]
+inherit = bar/base
+
+;tray
+;tray-position = right
+;tray-padding = 2
+
+border-size = 0
+border-color =
+
+bottom = true
+
+;modules
+modules-left = hostname info-hackspeed loadavg system-uptime-pretty
+modules-center = xwindow
+modules-right = redshift compton trash kernel
+
+
+;----------------
+; Modules
+;----------------
+
+
+[module/hostname]
+type = custom/script
+interval = 256
+format = "<label> "
+format-prefix = "  "
+format-prefix-foreground = #8ec07c
+format-padding = 0
+exec = echo "$(uname -n)"
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+
+label-layout = %layout%
+
+label-indicator = 
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+
+label-mounted = "%mountpoint%: %free% / %total%"
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-default = 
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+
+label-focused = %name%
+label-focused-background = #8ec07c
+label-focused-foreground = #263238
+label-focused-underline=
+label-focused-padding = 3
+
+label-occupied = %name%
+label-occupied-padding = 3
+
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <label>
+
+; Available tokens:
+;   %percentage% (default)
+label = "%percentage%%"
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = ${env:WIFI_INTERFACE:wlp3s0}
+interval = 3.0
+
+format-connected = <label-connected>
+
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/wlan2]
+type = internal/network
+interface = ${env:WIFI_INTERFACE:wlp2s0}
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% - %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/eth2]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/vpn]
+type = custom/script
+exec = echo VPN
+exec-if = pgrep -x openvpn
+interval = 5
+format-prefix = " "
+format-underline = ${colors.aqua}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %B %d, "
+
+time = " %a %I:%M:%S %p "
+time-alt = %I:%M
+
+format-prefix =
+
+label = %date% %time%
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+format-muted = <bar-volume>
+format-muted-prefix = ""
+format-muted-foreground = ${colors.foreground-alt}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator =
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+bar-muted-foreground-0 = #ff0000
+
+[module/pulseaudio]
+type = custom/script
+script = sh ~/.config/polybar/scripts/pulseaudio.sh
+exec = ${self.script}
+tail = true
+click-right = exec pavucontrol &
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = " %output% "
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+
+
+[module/battery1]
+type = internal/battery
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = AC
+full-at = 100
+time-format = %H:%M
+
+format-charging = <label-charging>
+label-charging = %percentage%% %time%
+
+format-discharging = <label-discharging>
+label-discharging = %percentage%% %time%
+
+format-full-prefix =
+format-full-prefix-foreground = ${colors.blue}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.primary}
+animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+full-at = 100
+time-format = %H:%M
+
+format-charging = <label-charging>
+label-charging = %percentage%% %time%
+
+format-discharging = <label-discharging>
+label-discharging = %percentage%% %time%
+
+format-full-prefix =
+format-full-prefix-foreground = ${colors.blue}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.primary}
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.alert}
+label-close =  cancel
+label-close-foreground = ${colors.alert}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[module/trash]
+type = custom/script
+label = "   %output% "
+exec = ~/.config/polybar/scripts/info-trash.sh
+interval = 1
+click-left = ~/.config/polybar/scripts/info-trash.sh --clean
+
+[module/cmus]
+type = custom/script
+
+exec = sh ~/.config/polybar/scripts/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --pause
+
+format = <label>
+format-underline = ${colors.primary}
+label = "%output% "
+
+[module/separator]
+type = custom/text
+content-font = 2
+content = |
+content-foreground = #dfdfdf
+
+[module/pkg]
+type = custom/script
+interval = 60
+format = <label>
+format-underline =
+label = " %output:0:30% "
+exec = ~/.config/polybar/scripts/pkg.sh
+
+[module/reddit]
+type = custom/script
+interval = 10
+format = <label>
+exec = ~/.config/polybar/scripts/reddit.sh
+click-left = xdg-open https://reddit.com/message/unread & disown
+
+[module/redshift]
+type = custom/script
+exec = ~/.config/polybar/scripts/redshift.sh
+click-left = ~/.config/polybar/scripts/redshift.sh --toggle
+interval = 5
+
+[module/compton]
+type = custom/script
+exec = ~/.config/polybar/scripts/compton.sh
+interval = 5
+click-left = ~/.config/polybar/scripts/compton.sh --toggle
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-hackspeed.sh
+tail = true
+
+[module/kernel]
+type = custom/script
+exec = uname -r
+interval = 1024
+
+[module/loadavg]
+type = custom/script
+exec = ~/.config/polybar/scripts/loadavg.sh
+interval = 5
+
+[module/system-uptime-pretty]
+type = custom/script
+exec = ~/.config/polybar/scripts/system-uptime-pretty.sh
+interval = 30
+
+[module/ip]
+type = custom/script
+exec = ~/.config/polybar/scripts/ip.sh
+interval = 30

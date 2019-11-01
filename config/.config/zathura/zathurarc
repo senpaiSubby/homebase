@@ -1,0 +1,65 @@
+set font                        "Source Code Pro 14"
+set default-bg                  "#263238" #00
+set default-fg                  "#eeffff" #01
+
+set statusbar-fg                "#c3e88d" #04
+set statusbar-bg                "#263238" #01
+
+set inputbar-bg                 "#151515" #00 currently not used
+set inputbar-fg                 "#303030" #02
+
+set notification-error-bg       "#f07178" #08
+set notification-error-fg       "#151515" #00
+
+set notification-warning-bg     "#f07178" #08
+set notification-warning-fg     "#151515" #00
+
+set highlight-color             "#ffcb6b" #0A
+set highlight-active-color      "#89ddff" #0D
+
+set completion-highlight-fg     "#303030" #02
+set completion-highlight-bg     "#89ddff" #0C
+
+set completion-bg               "#303030" #02
+set completion-fg               "#89ddff" #0C
+
+set notification-bg             "#c3e88d" #0B
+set notification-fg             "#151515" #00
+
+set recolor-lightcolor          "#263238" #00
+set recolor-darkcolor           "#eeffff" #06
+set recolor                     "true"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "false"
+
+set statusbar-home-tilde        "true"
+set selection-clipboard clipboard
+set smooth-scroll               "true"
+set adjust-open                 "width"
+set guioptions                  "s"
+set incremental-search          "false"
+set page-padding                4
+set selection-clipboard         "clipboard"
+set render-loading              "false"
+set show-scrollbars             "true"
+set show-recent                 "true"
+set window-title-basename       "false"
+set window-title-page           "false"
+set zoom-min			100
+set zoom-max			300
+
+# keybindings
+#map m mark_add
+#map b mark_evaluate
+#map D feedkeys ":bdelete"
+map a adjust_window best-fit
+map s adjust_window width
+map f follow
+map <Tab> toggle_index
+map j scroll down
+map k scroll up
+map h navigate previous
+map l navigate next
+map 1 recolor

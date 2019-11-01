@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/sublime/git/rice/bg/Keyboard.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#16212a",
+        "foreground": "#cbd1d4",
+        "cursor": "#cbd1d4"
+    },
+    "colors": {
+        "color0": "#16212a",
+        "color1": "#5E5F63",
+        "color2": "#A06258",
+        "color3": "#B89764",
+        "color4": "#4C699C",
+        "color5": "#778184",
+        "color6": "#6BA9C4",
+        "color7": "#cbd1d4",
+        "color8": "#8e9294",
+        "color9": "#5E5F63",
+        "color10": "#A06258",
+        "color11": "#B89764",
+        "color12": "#4C699C",
+        "color13": "#778184",
+        "color14": "#6BA9C4",
+        "color15": "#cbd1d4"
+    }
+}

@@ -1,0 +1,29 @@
+# This config is focused on classified names.
+#
+# When a new client is spawned, it checks its name against
+# any of the classifiers.  If there's a match, it will use
+# the name specified.  If not, the desktop name will be 
+# a space separated string of opened clients.  All empty 
+# desktops will use the constant name
+
+remove-empty = true
+append-when-occupied = true
+renamers = ["classified", "client", "constant"]
+
+[names]
+constant = ""
+
+[[names.classified]]
+"Web" = ["Chromium", "qutebrowser"]
+
+[[names.classified]]
+"Term" = ["URxvt", "urxvt"]
+
+[[names.classified]]
+"Steam" = ["Steam"]
+
+[[names.classified]]
+"Discord" = ["discord"]
+
+[[names.classified]]
+"Coding" = ["Code - OSS"]

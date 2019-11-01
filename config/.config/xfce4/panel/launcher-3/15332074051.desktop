@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Private Internet Access
+Exec=/opt/pia/run.sh
+Icon=/opt/pia/frontend/img/icon_512x512.png
+X-XFCE-Source=file:///home/sublime/.local/share/applications/pia_manager.desktop
