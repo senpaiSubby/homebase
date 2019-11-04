@@ -1,10 +1,3 @@
-shell mkdir standalone
-rename testing
-rename _standalone
-rename _testing
-rename reddit_scraper
-rename reddit_scraper.py
-rename ed.py
 shell mkdir alexa_app
 shell tar -xvf devilutionx-multilib-git-0.4.0.r166.g0b695f61-1-x86_64.pkg.tar.xz 
 shell desktop-file-install 
@@ -47,4 +40,11 @@ shell sudo rm -rf
 shell sh alexa_remote_control.sh 
 shell unzip nodejs_dark_by_wfuller_db4e1ip.zip 
 shell mkdir arduinoTesting
+rename logo.png
+rename config.json
+shell nano config.json 
+
+shell subbyBot.js
 delete
+shell mkdir etc
+shell mkdir -pdefault systemd

@@ -110,7 +110,7 @@ XTerm*renderFont:       True
 XTerm*preeditType:      Root
 XTerm*xftAntialias:     True
 XTerm*faceName:         FiraCode Nerd Font
-XTerm*faceSize:         12
+XTerm*faceSize:         24
 XTerm*scaleHeight: 1
 ! Trim trailing spaces
 XTerm*trimSelection:    True

@@ -13,7 +13,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 
 
-
+Plug 'morhetz/gruvbox'
 Plug 'zezic/onedark.vim'
 
 "Linters
@@ -86,7 +86,7 @@ set encoding=utf8
 set t_Co=256
 let base16colorspace=256
 set guifont="SauceCodePro Nerd Font Mono 8"
-colorscheme Sublime
+colorscheme gruvbox
 syntax enable
 
 
@@ -100,7 +100,7 @@ map <leader>[ :bprevious <CR>
 
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='term'
+let g:airline_theme='gruvbox'
 
 let g:ranger_map_keys = 0
 map `` :Ranger <CR>
