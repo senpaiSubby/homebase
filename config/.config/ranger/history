@@ -45,6 +45,6 @@ rename config.json
 shell nano config.json 
 
 shell subbyBot.js
-delete
 shell mkdir etc
 shell mkdir -pdefault systemd
+delete

@@ -162,7 +162,7 @@ curl https://raw.githubusercontent.com/mina86/urxvt-tabbedex/master/install | su
 ########################################################
 sudo pacman -S zsh
 
-git clone --recursive https://gitlab.com/simplysublime/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git clone --recursive git@github.com:simplysublimee/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 zsh -c 'setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
