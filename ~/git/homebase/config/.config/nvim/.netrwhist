@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/sublime/.rtorrent.session'
+let g:netrw_dirhist_2='/home/sublime/rice/scripts/lock'
+let g:netrw_dirhist_3='/home/sublime/.vim'
+let g:netrw_dirhist_4='/home/sublime/.config/nvim'
+let g:netrw_dirhist_5='/home/sublime/.config/qutebrowser'
+let g:netrw_dirhist_6='/home/sublime/.config/yay'

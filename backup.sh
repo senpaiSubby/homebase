@@ -1,4 +1,7 @@
 #!/bin/bash
+
+CONFIG_DIR='~/git/homebase/config'
+
 mkdir -p ~/git/homebase/config/home/.local/share
 
 ########## home ##########
@@ -14,9 +17,6 @@ cp -r ~/.vim ~/git/homebase/config/home/
 cp -r ~/.Xmodmap ~/git/homebase/config/home/
 
 ########## .config ##########
-
-
-
 
 cp -r ~/.config/mpv ~/git/homebase/config/.config/
 cp -r ~/.config/cava ~/git/homebase/config/.config/
@@ -39,7 +39,7 @@ cp -r ~/.config/sxhkd/ ~/git/homebase/config/.config/
 cp -r ~/.config/rofi/ ~/git/homebase/config/.config/
 cp -r ~/.config/oomox/ ~/git/homebase/config/.config/
 cp -r ~/.config/deluge/ ~/git/homebase/config/.config/
-
+cp -r ~/.config/libinput-gestures.conf ~/git/homebase/config/.config/
 
 ########## /etc ##########
 cp /etc/locale.gen ~/git/homebase/config/etc/
@@ -50,4 +50,3 @@ sudo cp -r /etc/systemd/logind.conf ~/git/homebase/config/etc/systemd/
 sudo chown -R sublime:users ~/git/homebase/
 
 echo Backup Complete
-

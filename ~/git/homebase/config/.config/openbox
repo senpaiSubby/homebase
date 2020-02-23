@@ -1,0 +1,135 @@
+# Shutdown
+alt + shift + BackSpace
+    urxvt -e shutdown now
+
+alt + shift + Delete
+    urcvt -e kill -9 -1
+# terminal emulator
+alt + Return
+    urxvt
+
+# Calander
+alt + shift + c
+    code-oss
+
+# program launcher
+alt + d
+    rofi -show run
+
+# Zathura PDF comic
+alt + shift + p
+	zathura
+
+# Newsboat
+alt + shift + n
+	urxvt -e newsboat
+
+
+#GUI FM
+alt + shift + f
+	pcmanfm
+
+#Reddit
+alt + shift + d
+	urxvt -e rtv --theme sublime --enable-media
+
+#Ranger FM
+alt + shift + r
+	urxvt -e ranger
+
+#Audio Settings
+alt + shift + s
+	urxvt -e pulsemixer
+
+#Web Browser
+alt + shift + w
+    qutebrowser	
+
+#Cmus Music
+alt + shift + m
+	urxvt -e cmus
+
+#Sublime Text
+alt + shift + e
+	urxvt -e nvim
+
+XF86Tools
+	urxvt -e nvim
+
+XF86Display
+	simplescreenrecorder
+
+#RTorrent
+alt + shift + t
+	urxvt -e screen rtorrent 
+#Lock Screen
+alt + shift + x
+	~/git/rice/scripts/lock/lock
+
+#Screenshot
+{shift + ,_} Print
+  scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/ ' && notify-send 'Screenshot captured'
+
+##########################
+#System
+##########################
+alt + shift + button4
+    volume.sh set 5%+
+
+alt + shift + button5
+    volume.sh set 5%-
+
+# Raises volume
+alt + F4
+    volume.sh set 5%+
+
+# Lowers volume
+alt + F3
+    volume.sh set 5%-
+
+# Mutes
+alt + F2
+	volume.sh set toggle
+
+# Raises volume
+XF86AudioRaiseVolume
+    volume.sh set 5%+
+
+# Lowers volume
+XF86AudioLowerVolume
+    volume.sh set 5%-
+
+# Mutes
+XF86AudioMute
+	volume.sh set toggle
+
+
+#Pause Cmus
+XF86AudioPlay
+#F6
+	cmus-remote --pause
+
+#Next song cmus
+XF86AudioNext
+#F8
+	cmus-remote --next
+
+#Prev song cmus
+XF86AudioPrev
+#F7
+	cmus-remote --prev
+
+#Brightness control
+XF86MonBrightnessDown
+	backlight.sh -
+XF86MonBrightnessUp
+	backlight.sh +
+
+alt + F1
+	normal
+
+alt + F2
+	bright
+
+alt + shift + z
+	exec /home/sublime/github/rice/scripts/lock/lock

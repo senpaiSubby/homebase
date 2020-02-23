@@ -1,3 +1,0 @@
-#! /bin/sh
-
-cmus_notify --title "{title} by {artist}" --body "<b>Album:</b> {album}" "$*"
