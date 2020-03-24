@@ -14,7 +14,8 @@ BASE="pcmanfm polybar bspwm sxhkd wmname ffmpegthumbnailer \
   ntfs-3g chromium pepper-flash xdo trash-cli zathura zathura-pdf-poppler \
   zathura-cb git jq python-xdg screen xdg-user-dirs firefox-developer-edition \
   os-prober dunst neovim htop java-openjfx sshfs python-pip zsh npm htop gparted \
-  p7zip python-pyside lxqt-policykit powertop tlp preload mbpfan-git"
+  p7zip python-pyside lxqt-policykit powertop tlp preload mbpfan-git piper \
+  automake base-devel gitkraken arduino sshfs sqlitebrowser visual-studio-code-bin arch-install-scripts"
 
 DRIVERS="piper b43-firmware-classic"
 
@@ -76,6 +77,7 @@ sudo systemctl mask lvm2-monitor.service
 sudo systemctl enable fancontrol.service
 sudo systemctl enable preload
 sudo systemctl enable mbpfan.service
+sudo systemctl enable piper.service
 
 # Configure Programs ------------------------------------------------------------
 
@@ -121,7 +123,7 @@ mkdir ~/.rtorrent.session
 
 # Setup ZSH Shell ------------------------------------------------------------
 
-git clone --recursive git@github.com:callmekory/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git clone --recursive https://github.com/callmekory/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 zsh -c 'setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
