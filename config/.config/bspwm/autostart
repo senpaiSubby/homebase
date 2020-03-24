@@ -2,19 +2,14 @@
 
 PATH=$PATH:$HOME/git/scripts
 export PATH
-#floating.sh &
-# Set Screen Refresh Rate
-#xrandr -r 144
 
 # Set Wallpaper
 sh ~/.fehbg
 
+
 # Top and bottom bars
 polybar -r top &
 polybar -r bottom &
-
-# Bluetooth
-blueman-applet &
 
 # Fix java applications
 wmname LG3D
@@ -30,7 +25,7 @@ xmodmap ~/.Xmodmap
 #xset s off
 
 # Enable USB Automount
-udiskie -a -t &
+udiskie -t &
 
 # Set Volume To %10
 amixer set Master 10%
@@ -39,7 +34,7 @@ amixer set Master 10%
 lxqt-policykit-agent &
 
 # Start Compton Screen Composition
-compton --config ~/.config/compton/solid.conf &
+compton --config ~/.config/compton/compton.conf &
 
 # Set Mouse Timeout To 1 Second
 unclutter --timeout 1 &
@@ -53,7 +48,7 @@ dunst -config ~/.config/dunst/dunstrc &
 #bspc config bottom_padding 40
 #/usr/bin/xcalib -d :0 ~/git/homebase/config/MonitorProfiles/laptop.icm
 
-#syncthing &
+syncthing &
 
 # Hide Bar
 #sh /usr/local/bin/bar.sh

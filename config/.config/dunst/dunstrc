@@ -12,14 +12,14 @@
     padding = 8
     horizontal_padding = 8
     frame_width = 3
-    frame_color "#ebdbb2" 
-    lb ="#1d2021" 
-    nb ="#1d2021" 
-    cb ="#1d2021" 
-    lf ="#ebdbb2"
-    bf ="#ebdbb2" 
-    cf ="#ebdbb2" 
-    nf= "#ebdbb2" 
+    frame_color = "#ebdbb2"
+    lb = "#1d2021"
+    nb = "#1d2021"
+    cb = "#1d2021"
+    lf = "#ebdbb2"
+    bf = "#ebdbb2"
+    cf = "#ebdbb2"
+    nf = "#ebdbb2"
     separator_color = frame
     sort = yes
     idle_threshold = 0

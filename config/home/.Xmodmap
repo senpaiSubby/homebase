@@ -1,1 +1,2 @@
-keysym XF86Eject = Delete
+clear lock
+keycode 66 = KP_Enter

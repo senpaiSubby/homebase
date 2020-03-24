@@ -1,31 +1,41 @@
-! hard contrast: *background: #1d2021
-*background: #282828
-! soft contrast: *background: #32302f
-*foreground: #ebdbb2
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
+! special
+*.foreground:   #e6e0d0
+*.background:   #282828
+*.cursorColor:  #e6e0d0
+
+! black
+*.color0:       #282828
+*.color8:       #484848
+
+! red
+*.color1:       #f92c23
+*.color9:       #f92c23
+
+! green
+*.color2:       #b2b602
+*.color10:      #b2b602
+
+! yellow
+*.color3:       #faba25
+*.color11:      #faba25
+
+! blue
+*.color4:       #5dbabf
+*.color12:      #5dbabf
+
+! magenta
+*.color5:       #e981b1
+*.color13:      #e981b1
+
+! cyan
+*.color6:       #89cf8c
+*.color14:      #89cf8c
+
+! white
+*.color7:       #a89984
+*.color15:      #e6e0d0
+
+
 
 
 !##########################################
@@ -64,7 +74,7 @@ URxvt.tabbed.tab-bg: 2
 
 URxvt.saveLines: 100000
 URxvt.internalBorder: 1
-URxvt.font: xft:FuraCode Nerd Font Mono:pixelsize=16
+URxvt.font: xft:FuraCode Nerd Font Mono:pixelsize=10
 URxvt.keysym.Shift-Control-V:    perl:clipboard:paste
 URxvt.keysym.Shift-Control-c:    perl:clipboard:copy
 URxvt.keysym.Shift-t:	         perl:tabbedex:new_tab
@@ -109,8 +119,8 @@ XTerm*utf8Title:        True
 XTerm*renderFont:       True
 XTerm*preeditType:      Root
 XTerm*xftAntialias:     True
-XTerm*faceName:         FiraCode Nerd Font
-XTerm*faceSize:         24
+XTerm*faceName:         FuraCode Nerd Font Mono
+XTerm*faceSize:         10
 XTerm*scaleHeight: 1
 ! Trim trailing spaces
 XTerm*trimSelection:    True

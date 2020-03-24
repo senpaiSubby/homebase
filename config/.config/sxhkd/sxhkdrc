@@ -1,35 +1,17 @@
 ##########################
 #Launcher
 ##########################
-# Toggle Bar
-alt + grave
-    bar.sh
-
-# Shutdown
-super + shift + BackSpace
-    st -e shutdown now
 
 super + shift + Delete
     st -e kill -9 -1
 
-# text editor
-super + shift + e
-    st -e nvim
-
-
 # terminal emulator
 super + Return
-    st
-# popup terminal
-super + v
-    scratchtermtoggle
+    st -e tmux
+
 # program launcher
 super + d
     rofi -show run
-
-# Zathura PDF comic
-super + shift + p
-	zathura
 
 #GUI FM
 super + shift + f
@@ -47,16 +29,6 @@ super + shift + s
 super + shift + w
     chromium
 
-XF86Tools
-	st -e nvim
-
-XF86Display
-	simplescreenrecorder
-
-#RTorrent
-super + shift + t
-	st -e screen rtorrent
-
 #Lock Screen
 super + shift + x
 	~/git/scripts/lock/lock
@@ -69,72 +41,43 @@ Print
 	subshare screenshot
 
 
+
+# Second Layer Keys
+alt + w
+    xdotool key Up --clearmodifiers Up
+alt + s
+    xdotool key Down
+alt + a
+    xdotool key Left
+alt + d
+    xdotool key Right
+
+
 ##########################
 #System
 ##########################
+# Keyboard Brightness
+
 XF86KbdBrightnessDown
-		keyboard-backlight-control.py --down
-
+    kbBacklight.py --down
 XF86KbdBrightnessUp
-		keyboard-backlight-control.py --up
+	kbBacklight.py --up
 
-super + shift + button4
-    setVolume set 5%+
+# Volume Keys
 
-super + shift + button5
-    setVolume.sh set 5%-
-
-# Raises volume
-super + F4
-    setVolume.sh set 5%+
-
-# Lowers volume
-super + F3
-    setVolume.sh set 5%-
-
-# Mutes
-super + F2
-	setVolume.sh set toggle
-
-# Raises volume
 XF86AudioRaiseVolume
     setVolume.sh set 5%+
-
-# Lowers volume
 XF86AudioLowerVolume
     setVolume.sh set 5%-
-
-# Mutes
 XF86AudioMute
 	setVolume.sh set toggle
 
+# Screen Brightness
 
-#Pause Cmus
-XF86AudioPlay
-#F6
-	cmus-remote --pause
-
-#Next song cmus
-XF86AudioNext
-#F8
-	cmus-remote --next
-
-#Prev song cmus
-XF86AudioPrev
-#F7
-	cmus-remote --prev
-
-#Brightness control
 XF86MonBrightnessDown
-	screenBrightnessControl.sh -
+	screenBrightness.sh -
 XF86MonBrightnessUp
-	screenBrightnessControl.sh +
-
-super + F1
-	normal
-
-super + F2
-	bright
+	screenBrightness.sh +
 
 super + shift + z
 	exec /home/sublime/git/scripts/lock/lock

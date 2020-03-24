@@ -1,50 +1,50 @@
-shell mkdir ubooquity
-rename .ubooquity
-rename .airsonic
-shell mkdir airsonic
-shell mkdir temp
-search iso
-search disk
-search cd
-shell bul
-rename rclone.conf
-shell sudo rm -rf test 
-shell sudo nano ssh
-shell sudo touch ssh
-rename cmds
-shell tail -f log.txt 
-shell mkdir rclone
-shell nano rclone.conf
-shell taild -f rclone.log 
-shell tail -f rclone.log 
-rename Tonari no Kaibutsu-kun
-bulkrename 
-shell rm -rf sorted 
-open_with 
-shell sudo rm -rf 
-shell sh alexa_remote_control.sh 
-shell unzip nodejs_dark_by_wfuller_db4e1ip.zip 
-shell mkdir arduinoTesting
-rename logo.png
-rename config.json
-shell nano config.json 
-
-shell subbyBot.js
-shell mkdir etc
-shell mkdir -pdefault systemd
-rename backupDockerContainers.py
-rename runAllDockerContainers.sh
-shell chmod +x backupDockerContainers.py 
-rename terminalColors.sh
-rename setVolume.sh
-rename setVolume
-rename speedtest
-rename magnetToTorrent.sh
-rename pillager.sh
-rename sitePillager.sh
-rename networkSpeedTest.py
-rename cleanSyncConflicts.sh
-rename cleanSyncthingConflicts.sh
-rename screenBrightnessControl.sh
-shell 
+shell sudo rm -rf Microsoft 
+shell sudo rm -rf APPLE 
+shell sudo rm -rf fae21c1ffbf74481a2d3c8c414325206 
+shell mkdir c#
+shell unzip roku-remote-tool-linux64.zip 
+shell sh arduino 
+rename avatar.png
+rename avatar.jpg
+rename content
+rename layouts
+rename static
+shell mkdir docker
+shell mkdir media networking downloading syncing general
+shell mkdir -p hydra2/config
+shell mkdir -p transmission/syncthing
+rename config
+shell mkdir sabnzbd/config
+shell mkdir -p sabnzbd/config
+shell mkdir -p syncthing/config
+shell mkdir pihole
+shell mkdir -p letsencrypt/config
+shell mkdir management
+shell mkdir -p portainer
+shell mk
+shell mkdir backend
+shell
+rename video.mp4
+shell mkdir taken
+rename steam.desktop
+shell sudo q
+shell utils
+shell mkdir utils
+shell organize.js .
+open_with nvim
+shell nano docker-compose.yml 
+shell q
+rename rss-dashboard
+rename node-logger
+rename node-utils
+rename packages.json
+rename gdrive-watcher-bot
+shell mkdir mindustry-server
+shell unzip mindustry-server.zip 
 delete
+shell mkdir mindustry
+shell unzip mindustry-linux-64-bit\ \(1\).zip 
+shell 
+open_with sh
+shell sudo nano arch.conf 
+open_with 

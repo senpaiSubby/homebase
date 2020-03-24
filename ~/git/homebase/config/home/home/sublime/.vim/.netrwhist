@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/sublime/Documents/Projects'
-let g:netrw_dirhist_2='/home/sublime/Git/scripts/python'
-let g:netrw_dirhist_3='/home/sublime/Git/scripts/python/subshare'
-let g:netrw_dirhist_4='/home/sublime/.config/nvim/nvim'

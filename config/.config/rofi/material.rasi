@@ -1,29 +1,29 @@
 * {
     active-background: #282828;
-    active-foreground: #8ec07c;
+    active-foreground: #b2b602;
     normal-background: #282828;
     normal-foreground: #ebdbb2;
-    urgent-background: #8ec07c;
-    urgent-foreground: #8ec07c;
+    urgent-background: #b2b602;
+    urgent-foreground: #b2b602;
 
     alternate-active-background: #282828;
     alternate-active-foreground: #ebdbb2;
     alternate-normal-background: #282828;
     alternate-normal-foreground: #ebdbb2;
     alternate-urgent-background: #282828;
-    alternate-urgent-foreground: #8ec07c;
+    alternate-urgent-foreground: #b2b602;
 
-    selected-active-background: #8ec07c;
-    selected-active-foreground: #8ec07c;
-    selected-normal-background: #8ec07c;
+    selected-active-background: #b2b602;
+    selected-active-foreground: #b2b602;
+    selected-normal-background: #b2b602;
     selected-normal-foreground: #282828;
-    selected-urgent-background: #8ec07c;
-    selected-urgent-foreground: #8ec07c;
+    selected-urgent-background: #b2b602;
+    selected-urgent-foreground: #b2b602;
 
     background-color: #282828;
-    background: #21212d;
+    background: #282828;
     foreground: #ebdbb2;
-    border-color: #8ec07c;
+    border-color: #b2b602;
     spacing: 2;
 }
 
@@ -45,7 +45,7 @@
 }
 
 #textbox {
-    text-color: #8ec07c;
+    text-color: #b2b602;
 }
 
 inputbar {

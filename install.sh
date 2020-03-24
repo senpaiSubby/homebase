@@ -14,9 +14,9 @@ BASE="pcmanfm polybar bspwm sxhkd wmname ffmpegthumbnailer \
   ntfs-3g chromium pepper-flash xdo trash-cli zathura zathura-pdf-poppler \
   zathura-cb git jq python-xdg screen xdg-user-dirs firefox-developer-edition \
   os-prober dunst neovim htop java-openjfx sshfs python-pip zsh npm htop gparted \
-  p7zip python-pyside lxqt-policykit powertop tlp preload"
+  p7zip python-pyside lxqt-policykit powertop tlp preload mbpfan-git"
 
-DRIVERS="piper"
+DRIVERS="piper b43-firmware-classic"
 
 DISPLAY="xorg-xprop xorg-server xorg-xrandr xorg-xinit xorg-xsetroot \
   xorg-xwininfo xorg-twm xorg-xbacklight xorg-xinput xorg-xclock xterm \
@@ -75,8 +75,32 @@ sudo systemctl enable wicd.service
 sudo systemctl mask lvm2-monitor.service
 sudo systemctl enable fancontrol.service
 sudo systemctl enable preload
+sudo systemctl enable mbpfan.service
 
 # Configure Programs ------------------------------------------------------------
+
+# Install Rclone
+curl https://rclone.org/install.sh | sudo bash
+
+# Touchpad Gestures
+sudo gpasswd -a $USER input
+yay -S libinput-gestures
+sudo pacman -S xdotool wmctrl
+cd ~/git
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+sudo make install
+
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+
+# Setup ST Terminal
+cd ~/git
+git clone https://github.com/callmekory/st
+cd st && sudo make clean install
+
+# Clone Script Git
+cd ~/ && git clone https://github.com/callmekory/scripts
 
 # Setup nodeJS Global Package Directory
 mkdir ~/.npm-global && npm config set prefix '~/.npm-global'
