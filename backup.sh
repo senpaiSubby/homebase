@@ -47,6 +47,6 @@ cp /etc/locale.conf ~/git/homebase/config/etc/
 cp /etc/default/tlp ~/git/homebase/config/etc/default/
 
 sudo cp -r /etc/systemd/logind.conf ~/git/homebase/config/etc/systemd/
-sudo chown -R sublime:users ~/git/homebase/
+sudo chown -R subby:subby ~/git/homebase/
 
 echo Backup Complete

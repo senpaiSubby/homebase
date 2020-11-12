@@ -1,5 +1,5 @@
 {
-	"buildDir": "/home/sublime/.cache/yay/",
+	"buildDir": "/home/subby/.cache/yay/",
 	"editor": "nvim",
 	"makepkgbin": "makepkg",
 	"pacmanbin": "pacman",

@@ -7,7 +7,7 @@ super + shift + Delete
 
 # terminal emulator
 super + Return
-    st -e tmux
+    st
 
 # program launcher
 super + d

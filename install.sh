@@ -29,9 +29,9 @@ AUDIO="pulseaudio pulseaudio-alsa alsa-utils pulsemixer a52dec x264 x265 \
   libxv wavpack x264 xvidcore gstreamer gst-plugins-ugly gst-plugins-base \
   gst-plugins-bad gst-libav"
 
-EXTRAS="youtube-dl easytag simplescreenrecorder steam bleachbit neofetch cava magnet2torrent-git \
-  tusk code soundconverter qnormalize make libconfig iotop pyrenamer filebot47 minecraft \
-  banshee filebot47 metamorphose2 qsyncthingtray visual-studio-code-bin sqlitebrowser postman-bin"
+EXTRAS="easytag neofetch \
+  make libconfig iotop \
+  filebot47 metamorphose2"
 
 # Cleanup Pacman Keys ------------------------------------------------------------
 

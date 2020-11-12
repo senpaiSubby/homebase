@@ -1,10 +1,3 @@
-shell sudo rm -rf Microsoft 
-shell sudo rm -rf APPLE 
-shell sudo rm -rf fae21c1ffbf74481a2d3c8c414325206 
-shell mkdir c#
-shell unzip roku-remote-tool-linux64.zip 
-shell sh arduino 
-rename avatar.png
 rename avatar.jpg
 rename content
 rename layouts
@@ -41,10 +34,17 @@ rename packages.json
 rename gdrive-watcher-bot
 shell mkdir mindustry-server
 shell unzip mindustry-server.zip 
-delete
 shell mkdir mindustry
 shell unzip mindustry-linux-64-bit\ \(1\).zip 
 shell 
 open_with sh
 shell sudo nano arch.conf 
 open_with 
+shell nano .zshrc 
+shell nano zprofile 
+shell nano 
+shell nano config.json 
+shell gedit Makefile.def 
+delete
+shell tar -xvf rr62x-linux-src-v1.3.3-130822-17639.tar.gz 
+shell nano backup.sh 
