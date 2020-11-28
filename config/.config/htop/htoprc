@@ -1,3 +1,11 @@
+# __       _     _           
+#/ _\_   _| |__ | |__  _   _ 
+#\ \| | | | '_ \| '_ \| | | |
+#_\ \ |_| | |_) | |_) | |_| |
+#\__/\__,_|_.__/|_.__/ \__, |
+#                      |___/ 
+
+
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
 fields=0 48 46 47 49 1
