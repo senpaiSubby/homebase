@@ -104,7 +104,7 @@ mkdir -p ~/.local/share/Trash/files
 mkdir ~/.rtorrent.session
 
 # Setup ZSH Shell ------------------------------------------------------------
-git clone --recursive https://github.com/callmekory/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git clone --recursive https://github.com/senpaisubby/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 zsh -c 'setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
