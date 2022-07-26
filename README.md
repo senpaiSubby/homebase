@@ -7,19 +7,7 @@
 
 **<h3 align="center">Orion</h3>**
 
-  <p align="center">
-    My Arch Linux dot files.
-    <br />
-    <br />
-    <a href="https://github.com/senpaiSubby/homebase">View Demo</a>
-    ·
-    <a href="https://github.com/senpaiSubby/homebase/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/senpaiSubby/homebase/issues">Request Feature</a>
-  </p>
-</p>
-
-![alt text](/img/preview.png "preview.")
+![alt text](/preview.png "preview.")
 
 <!-- ABOUT THE PROJECT -->
 
