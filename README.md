@@ -1,10 +1,3 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/senpaiSubby/homebase">
-    <img src="img/logo.png" alt="Logo" width="126" height="126">
-  </a>
-
 **<h3 align="center">Orion</h3>**
 
 ![alt text](/preview.png "preview.")
