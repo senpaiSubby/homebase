@@ -7,26 +7,30 @@
 #\__/\__,_|_.__/|_.__/ \__, |
 #                      |___/ 
 
-
 # Application Categories ------------------------------------------------------------
 
-NETWORK="archlinux-keyring net-tools wget netctl"
+NETWORK="archlinux-keyring net-tools wget netctl network-manager-applet"
 
-BASE="ttf-ionicons ttf-material-design-icons mpv scrot grsync ranger zip unzip udiskie udisks2 \
-  ntfs-3g chromium git screen tmux \
-  os-prober neovim htop sshfs python-pip zsh htop gparted \
-  p7zip automake"
+BASE="yazi pacseek mpv scrot grsync ranger zip unzip udiskie udisks2 \
+  ntfs-3g git screen tmux micro blueman brightnessctl clipman envycontrol \
+  os-prober neovim htop sshfszsh htop gparted \
+  p7zip automake polkit hyprpolkitagent"
 
-DRIVERS="piper"
 
-DISPLAY="xorg"
+HYPRLAND="hyprland hyprlock hyprpaper wlogout waybar wofi hypridle"
 
-AUDIO="pulseaudio pulseaudio-alsa alsa-utils pulsemixer a52dec x264 x265 \
-  faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis \
-  libxv wavpack x264 xvidcore gstreamer gst-plugins-ugly gst-plugins-base \
-  gst-plugins-bad gst-libav"
+FONTS="font-manager otf-hasklig-nerd ttf-ionicons ttf-material-design-icons nerd-fonts-git otf-font-awesome "
 
-EXTRAS=""
+THEMES="papirus-icon-theme kvantum plymouth plymouth-kcm"
+
+DRIVERS="mesa libva-intel-driver libva-utils vulkan-intel"
+
+DISPLAY=""
+
+AUDIO="sof-firmware pwvucontrol pipewire pipewire-alsa pipewire-pulse wireplumber"
+
+EXTRAS="bitwarden bambustudio-bin microsoft-edge-dev-bin code-insiders-bin obsidian \
+        vencord-bin github-desktop-bin syncthingtray-qt6"
 
 # Cleanup Pacman Keys ------------------------------------------------------------
 
@@ -45,13 +49,15 @@ sudo timedatectl set-timezone America/Los_Angeles
 cd ~/git && git clone https://aur.archlinux.org/yay-git.git && cd yay-git && makepkg -csi && cd ~/git/homebase
 
 # Install Programs ------------------------------------------------------------
-yay -S $NETWORK
-yay -S $BASE
-yay -S $POWER
-yay -S $DISPLAY
 yay -S $AUDIO
-yay -S $EXTRAS
+yay -S $BASE
+yay -S $DISPLAY
 yay -S $DRIVERS
+yay -S $EXTRAS
+yay -S $FONTS
+yay -S $HYPRLAND
+yay -S $NETWORK
+yay -S $POWER
 
 # System Tweaks ------------------------------------------------------------
 
@@ -63,11 +69,9 @@ sudo systemctl enable udisk2.service
 sudo systemctl enable wicd.service
 sudo systemctl enable piper.service
 
+systemctl --user --now enable pipewire pipewire-pulse wireplumber
+
 # Configure Programs ------------------------------------------------------------
-
-# Install Rclone
-curl https://rclone.org/install.sh | sudo bash
-
 
 # Setup ST Terminal
 #cd ~/git && git clone https://github.com/callmekory/st &&cd st && sudo make clean install
@@ -81,15 +85,6 @@ curl https://rclone.org/install.sh | sudo bash
 # Setup NVIM Plugin Manager
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Setup JAVA
-#sudo archlinux-java set java-10-openjdk
-
-
-
-# Create Needed Directories ------------------------------------------------------------
-#mkdir -p ~/.local/share/Trash/files
-#mkdir ~/.rtorrent.session
-
 # Setup ZSH Shell ------------------------------------------------------------
 git clone --recursive https://github.com/senpaisubby/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
@@ -102,13 +97,3 @@ done'
 chsh -s /bin/zsh
 
 echo "INSTALL COMPLETE"
-
-
-
-
-
-
-
-xorg sddm chromium nvidia nvidia-settings discord openssh git plasma plasma-extras kde-applications wget \
-sof-firmware zsh ccsm compiz emerald emerald-themes plexamp-appimage plex-desktop nano linux linux-headers \
-netctl ranger archlinux-keyring

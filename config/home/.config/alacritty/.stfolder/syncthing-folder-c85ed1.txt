@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: hgfxp-pycdt
+created: 2025-06-24T13:29:26-07:00

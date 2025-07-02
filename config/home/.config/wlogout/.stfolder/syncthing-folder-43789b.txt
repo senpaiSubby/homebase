@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: ps9wz-plyvz
+created: 2025-06-24T22:28:52-07:00

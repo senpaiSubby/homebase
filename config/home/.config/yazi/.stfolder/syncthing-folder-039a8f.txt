@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: pfewa-jxtwx
+created: 2025-06-24T20:38:51-07:00

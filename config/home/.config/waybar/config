@@ -1,0 +1,12 @@
+{
+  "output": "",
+  "height": 10,
+  "layer": "top",
+  "position": "top",
+  "margin": "0px 0px 0px 0px",
+
+  "include": ["~/.config/waybar/modules.json"],
+  "modules-left": ["custom/power-button","group/clock"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "group/sys-info","battery","custom/notification"]
+}
