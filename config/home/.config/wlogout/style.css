@@ -8,7 +8,7 @@ window {
 }
 
 button {
-	border-radius: 0;
+	border-radius: 10;
 	border-color: #89b4fa;
 	text-decoration-color: #cdd6f4;
 	color: #cdd6f4;

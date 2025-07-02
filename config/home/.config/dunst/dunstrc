@@ -1,0 +1,123 @@
+# __       _     _           
+#/ _\_   _| |__ | |__  _   _ 
+#\ \| | | | '_ \| '_ \| | | |
+#_\ \ |_| | |_) | |_) | |_| |
+#\__/\__,_|_.__/|_.__/ \__, |
+#                      |___/ 
+
+
+[global]
+    ### Display ###
+
+    monitor = 0
+    follow = mouse
+    width = (100, 600)
+    height = (50, 400)
+    offset = (25, 25)
+    origin = top-right
+    indicate_hidden = yes
+    shrink = yes
+    transparency = 50
+    separator_height = 1
+    corner_radius=10
+    padding = 20
+    horizontal_padding = 8
+    frame_width = 3
+    frame_color = "#cba6f7"
+    separator_color= frame
+    highlight = "#cba6f7"
+    sort = yes
+    idle_threshold = 0
+    enable_recursive_icon_lookup=true
+    ### Text ###
+
+    font = Fira Code 14
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b\n%p"
+    alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = true
+    show_indicators = no
+
+    ### Icons ###
+
+    icon_position = left
+    max_icon_size = 64
+    icon_theme = Papirus
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc/Advanced ###
+
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/chromium -new-tab
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+
+    ### Legacy
+    force_xinerama = false
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#fab387"
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+#
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+[Volume]
+	appname= notify-send
+	summary= "Volume"
+	format = "<b>%s</b>\n%b%p"
+
+[Brightness]
+	appname = notify-send
+	summary = "Brightness"
+	format = "<b>%s</b>\n%b%p"
+
+[Workspace]
+	appname = notify-send
+	summary = "Workspace"
+	format = "%b"
+
+[DateTime]
+	appname = notify-send
+	summary = "Datetime"
+	format = "%b"
+
+[Battery]
+	appname = notify-send
+	summary = "Battery"
+	format = "%b"
+
+# vim: ft=cfg
