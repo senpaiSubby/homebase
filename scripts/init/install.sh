@@ -7,6 +7,10 @@
 #\__/\__,_|_.__/|_.__/ \__, |
 #                      |___/ 
 
+# Setup YAY AUR Package Manager ------------------------------------------------------------
+git clone https://aur.archlinux.org/yay-git.git && cd yay-git && makepkg -csi && cd ~/git/homebase
+
+
 # Application Categories ------------------------------------------------------------
 
 NETWORK="archlinux-keyring net-tools wget netctl network-manager-applet"
@@ -15,9 +19,6 @@ BASE="nfs-utils yazi pacseek mpv scrot grsync ranger zip unzip udiskie udisks2 \
   ntfs-3g git screen tmux micro blueman brightnessctl inotify-tools clipman envycontrol \
   os-prober neovim htop sshfszsh htop gparted \
   p7zip automake polkit hyprpolkitagent uwsm libnewt"
-
-pacman -S uwsm libnewt
-
 
 HYPRLAND="hyprland hyprlock hyprpaper wlogout waybar wofi hypridle"
 
@@ -46,9 +47,6 @@ sudo pacman -S ntp --noconfirm
 sudo systemctl enable ntpd.service
 sudo timedatectl set-ntp true
 sudo timedatectl set-timezone America/Los_Angeles
-
-# Setup YAY AUR Package Manager ------------------------------------------------------------
-cd ~/git && git clone https://aur.archlinux.org/yay-git.git && cd yay-git && makepkg -csi && cd ~/git/homebase
 
 # Install Programs ------------------------------------------------------------
 yay -S $AUDIO
