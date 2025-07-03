@@ -6,16 +6,14 @@
 
 ## **About The Project**
 
-This repo serves as a store for most of my Arch Linux configs in my setup. From KDE Plasma to BSPWM or Polybar
-it's all here. Feel free to take, modify and use anything in this repo.
+This repo serves as a store for most of my Hyprland Arch Linux configs in my setup. It's all here. Feel free to take, modify and use anything in this repo.
 
 ### **Built With**
 
 - [Arch Linux]()
-- [KDE Plasma]()
-- [BSPWM]()
-- [Polybar]()
-- [ST Terminal]()
+- [Hyprland]()
+- [Waybar]()
+- [Kitty]()
 
 ## **Usage**
 
