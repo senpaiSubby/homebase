@@ -8,7 +8,9 @@
 #                      |___/ 
 
 # Setup YAY AUR Package Manager ------------------------------------------------------------
-git clone https://aur.archlinux.org/yay-git.git && cd yay-git && makepkg -csi && cd ~/git/homebase
+git clone https://aur.archlinux.org/yay-git.git && cd yay-git && makepkg -csi
+
+yay --save --answerclean None --answerdiff None --noremovemake
 
 
 # Application Categories ------------------------------------------------------------
@@ -49,14 +51,17 @@ sudo timedatectl set-ntp true
 sudo timedatectl set-timezone America/Los_Angeles
 
 # Install Programs ------------------------------------------------------------
-yay -S $AUDIO
 yay -S $BASE
+yay -S $HYPRLAND
+yay -S $NETWORK
+
+yay -S $AUDIO
+
 yay -S $DISPLAY
 yay -S $DRIVERS
 yay -S $EXTRAS
 yay -S $FONTS
-yay -S $HYPRLAND
-yay -S $NETWORK
+
 yay -S $POWER
 
 # System Tweaks ------------------------------------------------------------
