@@ -107,3 +107,5 @@ mkdir /mnt/media /mnt/docker /mnt/archive
 echo "INSTALL COMPLETE"
 oreo-cursors-bin
 rose-pine-cursor rose-pine-hyprcursor
+figlet
+xwaylandvideobridge-git
