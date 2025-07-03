@@ -11,17 +11,19 @@
 
 NETWORK="archlinux-keyring net-tools wget netctl network-manager-applet"
 
-BASE="yazi pacseek mpv scrot grsync ranger zip unzip udiskie udisks2 \
-  ntfs-3g git screen tmux micro blueman brightnessctl clipman envycontrol \
+BASE="nfs-utils yazi pacseek mpv scrot grsync ranger zip unzip udiskie udisks2 \
+  ntfs-3g git screen tmux micro blueman brightnessctl inotify-tools clipman envycontrol \
   os-prober neovim htop sshfszsh htop gparted \
-  p7zip automake polkit hyprpolkitagent"
+  p7zip automake polkit hyprpolkitagent uwsm libnewt"
+
+pacman -S uwsm libnewt
 
 
 HYPRLAND="hyprland hyprlock hyprpaper wlogout waybar wofi hypridle"
 
 FONTS="font-manager otf-hasklig-nerd ttf-ionicons ttf-material-design-icons nerd-fonts-git otf-font-awesome "
 
-THEMES="papirus-icon-theme kvantum plymouth plymouth-kcm"
+THEMES="qt5ct qt6ct-kde papirus-icon-theme kvantum plymouth plymouth-kcm"
 
 DRIVERS="mesa libva-intel-driver libva-utils vulkan-intel"
 
@@ -96,4 +98,12 @@ done'
 # Change Shell To ZSH
 chsh -s /bin/zsh
 
+
+
+sudo chown -R subby: /mnt /srv
+mkdir /mnt/media /mnt/docker /mnt/archive
+
+
 echo "INSTALL COMPLETE"
+oreo-cursors-bin
+rose-pine-cursor rose-pine-hyprcursor

@@ -99,7 +99,7 @@
   },
   "clock": {
     "timezone": "America/Los_Angeles",
-    "format": "<span color='#ffcb6b'>󰥔</span> {:%a %b %d %R %p}",
+    "format": "<span color='#ffcb6b'>󰥔</span> {:%a %b %d %I:%M%p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
   "temperature": {

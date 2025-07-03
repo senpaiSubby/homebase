@@ -1,0 +1,10 @@
+[General]
+Version=202
+ViewPropsTimestamp=2025,7,2,17,42,36.183
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
