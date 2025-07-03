@@ -27,7 +27,7 @@ THEMES="qt5ct qt6ct-kde papirus-icon-theme kvantum plymouth plymouth-kcm"
 
 DRIVERS="mesa libva-intel-driver libva-utils vulkan-intel"
 
-DISPLAY=""
+DISPLAY="rose-pine-cursor rose-pine-hyprcursor figlet xwaylandvideobridge-git"
 
 AUDIO="sof-firmware pwvucontrol pipewire pipewire-alsa pipewire-pulse wireplumber"
 
@@ -105,7 +105,3 @@ mkdir /mnt/media /mnt/docker /mnt/archive
 
 
 echo "INSTALL COMPLETE"
-oreo-cursors-bin
-rose-pine-cursor rose-pine-hyprcursor
-figlet
-xwaylandvideobridge-git
